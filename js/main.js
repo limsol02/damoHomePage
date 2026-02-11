@@ -24,11 +24,24 @@ navToggle.addEventListener('click', () => {
 });
 
 // Close mobile menu when clicking on a link
+function closeNav() {
+    if (navToggle) navToggle.classList.remove('active');
+    if (navMenu) navMenu.classList.remove('active');
+    document.querySelectorAll('.nav-item.open').forEach(el => el.classList.remove('open'));
+}
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
+    link.addEventListener('click', function(e) {
+        const navItem = this.closest('.nav-item--dropdown');
+        if (navItem && window.innerWidth <= 768) {
+            e.preventDefault();
+            navItem.classList.toggle('open');
+            return;
+        }
+        closeNav();
     });
+});
+document.querySelectorAll('.nav-sublink').forEach(link => {
+    link.addEventListener('click', () => closeNav());
 });
 
 // Active nav link on scroll

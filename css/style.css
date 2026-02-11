@@ -259,6 +259,59 @@ button {
     transition: var(--transition-base);
 }
 
+/* Nav dropdown (중메뉴) */
+.nav-item {
+    position: relative;
+}
+.nav-item .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.nav-arrow {
+    font-size: 10px;
+    opacity: 0.8;
+    transition: transform var(--transition-base);
+}
+.nav-item:hover .nav-arrow {
+    transform: rotate(180deg);
+}
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    padding: 8px 0;
+    background: rgba(30, 30, 30, 0.98);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-hover);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+    list-style: none;
+    margin-top: 8px;
+    z-index: 1001;
+}
+.nav-item:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.nav-sublink {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-white);
+    transition: background var(--transition-base);
+}
+.nav-sublink:hover,
+.nav-sublink.active {
+    background: rgba(255, 107, 53, 0.25);
+    color: var(--primary-white);
+}
+
 /* ================================
    Hero Section
    ================================ */
@@ -1111,6 +1164,40 @@ button {
     
     .nav-menu.active {
         transform: translateX(0);
+    }
+    
+    .nav-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+    .nav-item .nav-link {
+        padding: 12px 0;
+    }
+    .nav-dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        margin-top: 0;
+        padding: 0 0 8px 16px;
+        background: transparent;
+        box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .nav-item.open .nav-dropdown {
+        max-height: 300px;
+    }
+    .nav-item.open .nav-arrow {
+        transform: rotate(180deg);
+    }
+    .nav-sublink {
+        padding: 10px 0 10px 8px;
+        font-size: 14px;
+        border-left: 2px solid rgba(255,255,255,0.3);
+        margin-left: 8px;
     }
     
     .nav-contact {

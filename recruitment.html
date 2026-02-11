@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="인재채용 - 채용공고">
+    <title>인재채용 | 채용공고</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-hero { position: relative; width: 100%; height: 45vh; min-height: 360px; background: linear-gradient(135deg, var(--brand-brown) 0%, var(--brand-brown-light) 100%); display: flex; align-items: center; justify-content: center; }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; color: white; }
+        .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 16px; }
+        .content-section { padding: var(--spacing-xl) 0; }
+        .jobs-list { max-width: 900px; margin: 0 auto; }
+        .job-card { background: var(--neutral-light); border-radius: var(--radius-md); padding: var(--spacing-md) var(--spacing-lg); margin-bottom: var(--spacing-sm); border-left: 4px solid var(--accent-orange); transition: var(--transition-base); }
+        .job-card:hover { box-shadow: var(--shadow-hover); }
+        .job-card h3 { font-family: var(--font-primary); margin-bottom: 8px; color: var(--text-dark); }
+        .job-meta { font-size: 14px; color: #666; margin-bottom: 12px; }
+        .job-meta span { margin-right: 20px; }
+        .job-desc { font-size: 15px; line-height: 1.7; color: #555; }
+        .job-apply { display: inline-block; margin-top: 12px; padding: 10px 24px; background: var(--accent-orange); color: #fff; border-radius: var(--radius-sm); font-weight: 600; text-decoration: none; font-size: 14px; transition: var(--transition-base); }
+        .job-apply:hover { background: var(--accent-orange-hover); color: #fff; transform: translateY(-1px); }
+        .no-jobs { text-align: center; padding: var(--spacing-lg); color: #666; }
+        @media (max-width: 768px) { .page-hero { height: 35vh; min-height: 280px; } .job-card { padding: var(--spacing-sm) var(--spacing-md); } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Logo" style="height: 40px; width: auto;"></a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-item nav-item--dropdown">
+                    <a href="smart-logistics.html" class="nav-link">비지니스 <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="smart-logistics.html" class="nav-sublink">스마트 물류</a></li>
+                        <li><a href="smart-ito.html" class="nav-sublink">스마트 ITO</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item nav-item--dropdown">
+                    <a href="about-altri.html" class="nav-link">회사소개 <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="about-altri.html" class="nav-sublink">앨트리</a></li>
+                        <li><a href="about-service.html" class="nav-sublink">서비스</a></li>
+                        <li><a href="about-partner.html" class="nav-sublink">파트너</a></li>
+                        <li><a href="about-location.html" class="nav-sublink">오시는 길</a></li>
+                    </ul>
+                </div>
+                <a href="recruitment.html" class="nav-link active">인재채용</a>
+                <div class="nav-item nav-item--dropdown">
+                    <a href="support-notice.html" class="nav-link">고객지원 <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <ul class="nav-dropdown">
+                        <li><a href="support-notice.html" class="nav-sublink">공지사항</a></li>
+                        <li><a href="support-contact.html" class="nav-sublink">문의하기</a></li>
+                        <li><a href="support-tech.html" class="nav-sublink">기술지원</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">인재채용</h1>
+            <p>함께 성장할 인재를 찾습니다</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">채용공고</h2>
+                <p class="section-subtitle">현재 진행 중인 채용 포지션입니다. 지원 시 이력서를 문의 메일로 보내 주세요.</p>
+            </div>
+            <div class="jobs-list">
+                <div class="job-card">
+                    <h3>AI/ML 엔지니어</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-briefcase"></i> 정규직</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 서울</span>
+                        <span><i class="fas fa-clock"></i> 상시채용</span>
+                    </div>
+                    <p class="job-desc">AI·머신러닝 기반 제품 개발 및 서비스 최적화를 담당합니다. 실무 경력 3년 이상 우대.</p>
+                    <a href="index.html#contact" class="job-apply">지원하기</a>
+                </div>
+                <div class="job-card">
+                    <h3>풀스택 개발자</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-briefcase"></i> 정규직</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 서울 / 재택 가능</span>
+                        <span><i class="fas fa-clock"></i> 상시채용</span>
+                    </div>
+                    <p class="job-desc">웹·백엔드 서비스 설계 및 개발. React, Node.js 등 실무 경험자 우대.</p>
+                    <a href="index.html#contact" class="job-apply">지원하기</a>
+                </div>
+                <div class="job-card">
+                    <h3>비즈니스 개발 / 영업</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-briefcase"></i> 정규직</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 서울</span>
+                        <span><i class="fas fa-clock"></i> 상시채용</span>
+                    </div>
+                    <p class="job-desc">B2B 영업 및 파트너십 구축. IT·솔루션 영업 경험자 우대.</p>
+                    <a href="index.html#contact" class="job-apply">지원하기</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-lg);">
+                <p class="section-description">문의: <a href="mailto:hr@mbremodeling.com">hr@mbremodeling.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo"><i class="fas fa-home"></i><span>M&B Remodeling</span></div>
+                    <p class="footer-description">2005년부터 전문 기술과 혁신적인 디자인으로 특별한 공간을 만들어 왔습니다.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">바로가기</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="smart-logistics.html">스마트 물류</a></li>
+                        <li><a href="about-altri.html">회사소개</a></li>
+                        <li><a href="recruitment.html">인재채용</a></li>
+                        <li><a href="support-notice.html">고객지원</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">서비스</h4>
+                    <ul class="footer-links">
+                        <li><a href="smart-logistics.html">스마트 물류</a></li>
+                        <li><a href="support-tech.html">기술지원</a></li>
+                        <li><a href="support-contact.html">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i> 123-456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@mbremodeling.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Los Angeles, CA 90001</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 M&B Remodeling. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
