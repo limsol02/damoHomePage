@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="M&B Remodeling - Exceptional Home Remodeling & Renovations. Professional, modern, and quality-driven home transformation services.">
+    <title>M&B Remodeling | Exceptional Home Remodeling & Renovations</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Logo" style="height: 40px; width: auto;">
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#manufacturing" class="nav-link">Manufacturing</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('images/downloaded-image.png')">
+                <div class="slide-content">
+                    <h1 class="hero-title fade-in" style="width: 1200px; max-width: 1200px;">Redefine Innovation: AI with us</h1>
+                    <p class="hero-subtitle fade-in">우리와 함께하는 AI가 당신 안의 잠재된 미래를 깨웁니다</p>
+
+                    
+                </div>
+                    <!-- Detail Button -->
+                    <button class="chat-button detail-button" id="detailBtn1" aria-label="자세히 알아보기" style="bottom: 110px; background-color: var(--brand-brown);">
+                        <i class="fas fa-info-circle"></i> 
+                        <span>자세히 알아보기</span>
+                    </button>
+            </div>
+            </div>
+            <div class="slide" style="background-image: url('images/slide2-bg.jpg')">
+                <div class="slide-content">
+                    <h1 class="hero-title fade-in" style="width: 1200px; max-width: 1200px;">Moving Faster with AI</h1>
+                    <p class="hero-subtitle fade-in">우리와 함께하는 AI가 잠들어 있는 물류 효율을 깨웁니다. 최적화된 경로와 스마트한 관리로 비즈니스의 흐름을 바꾸십시오.</p>
+                    <!-- <button class="btn btn-primary fade-in" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        Get A Free Estimate
+                    </button> -->
+
+                    
+                </div>
+                <!-- Detail Button -->
+                <button class="chat-button detail-button" id="detailBtn" aria-label="자세히 알아보기" style="bottom: 110px; background-color: var(--brand-brown);">
+                    <i class="fas fa-info-circle"></i> 
+                    <span>자세히 알아보기</span>
+                </button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <!-- Hero content is now inside each slide -->
+        <!-- 
+        <div class="hero-content">
+            <h1 class="hero-title fade-in" style="width: 1200px; max-width: 1200px;">Redefine Innovation: AI with us</h1>
+            <p class="hero-subtitle fade-in">The AI within us awakens the future within you. Reach the pinnacle of business with our cutting-edge technology</p>
+            <button class="btn btn-primary fade-in" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                Get A Free Estimate
+            </button>
+        </div>
+        -->
+        
+        <!-- Slideshow Controls -->
+        <div class="slideshow-controls">
+            <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+            <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+        </div>
+        
+        <!-- Slide Indicators -->
+        <div class="slide-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Crafting Dream Homes Since 2005</h2>
+                    <p class="section-description">
+                        M&B Remodeling is your trusted partner in creating exceptional living spaces. With over 18 years of experience, we specialize in transforming houses into dream homes through meticulous attention to detail, innovative design, and superior craftsmanship.
+                    </p>
+                    <p class="section-description">
+                        Our team of skilled professionals is committed to delivering projects that exceed expectations, on time and within budget. From concept to completion, we work closely with homeowners to bring their vision to life.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="500">0</h3>
+                            <p class="stat-label">Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="18">0</h3>
+                            <p class="stat-label">Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="98">0</h3>
+                            <p class="stat-label">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern living room interior" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="manufacturing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive remodeling solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3 class="service-title">Kitchen Remodeling</h3>
+                    <p class="service-description">Transform your kitchen into a functional masterpiece with custom cabinetry, modern appliances, and elegant design.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3 class="service-title">Bathroom Renovation</h3>
+                    <p class="service-description">Create a luxurious spa-like retreat with contemporary fixtures, premium materials, and thoughtful layouts.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="service-title">Living Space Redesign</h3>
+                    <p class="service-description">Reimagine your living areas with open concepts, stylish finishes, and comfortable environments.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service-title">Whole Home Remodel</h3>
+                    <p class="service-description">Complete home transformations that enhance every room while maintaining cohesive design throughout.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-title">Home Additions</h3>
+                    <p class="service-description">Expand your living space with seamlessly integrated additions that complement your existing home.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="service-title">Custom Design</h3>
+                    <p class="service-description">Personalized design services that capture your unique style and maximize functionality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Process</h2>
+                <p class="section-subtitle">A streamlined approach to bringing your vision to life</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Consultation</h3>
+                    <p class="step-description">We meet to discuss your vision, budget, and timeline for the project.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Design & Planning</h3>
+                    <p class="step-description">Our team creates detailed designs and plans tailored to your needs.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Construction</h3>
+                    <p class="step-description">Expert craftsmen bring the design to life with precision and care.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Final Walkthrough</h3>
+                    <p class="step-description">We ensure every detail meets your expectations before completion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Work</h2>
+                <p class="section-subtitle">A showcase of our recent transformations</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=800&q=80" alt="Modern kitchen remodel" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Modern Kitchen</h3>
+                        <p class="portfolio-category">Kitchen Remodeling</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Luxury bathroom renovation" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Luxury Bathroom</h3>
+                        <p class="portfolio-category">Bathroom Renovation</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Contemporary living room" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Contemporary Living</h3>
+                        <p class="portfolio-category">Living Space Redesign</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80" alt="Bedroom makeover" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Master Bedroom</h3>
+                        <p class="portfolio-category">Bedroom Makeover</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Home office design" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Home Office</h3>
+                        <p class="portfolio-category">Custom Design</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Outdoor living space" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Outdoor Living</h3>
+                        <p class="portfolio-category">Home Addition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Real feedback from satisfied homeowners</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"M&B Remodeling transformed our outdated kitchen into a modern masterpiece. Their attention to detail and professionalism exceeded our expectations. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Sarah Johnson</h4>
+                        <p class="author-location">Los Angeles, CA</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The team was professional, timely, and the quality of work was outstanding. Our bathroom renovation turned out better than we imagined. Thank you, M&B!"</p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Michael Chen</h4>
+                        <p class="author-location">San Francisco, CA</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"From initial consultation to final walkthrough, M&B Remodeling made our whole home remodel stress-free. The result is absolutely stunning!"</p>
+                    <div class="testimonial-author">
+                        <h4 class="author-name">Emily Rodriguez</h4>
+                        <p class="author-location">San Diego, CA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Home?</h2>
+                <p class="cta-text">Let's discuss your vision and create the home you've always dreamed of</p>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    Schedule a Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's start planning your dream remodel today</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="kitchen">Kitchen Remodeling</option>
+                                <option value="bathroom">Bathroom Renovation</option>
+                                <option value="living">Living Space Redesign</option>
+                                <option value="whole-home">Whole Home Remodel</option>
+                                <option value="addition">Home Addition</option>
+                                <option value="custom">Custom Design</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Project</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Visit Us</h4>
+                            <p>123 Remodeling Ave<br>Los Angeles, CA 90001</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Call Us</h4>
+                            <p>123-456-7890<br>Mon-Fri, 8AM-6PM</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Email Us</h4>
+                            <p>info@mbremodeling.com<br>quotes@mbremodeling.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-home"></i>
+                        <span>M&B Remodeling</span>
+                    </div>
+                    <p class="footer-description">Creating exceptional living spaces with expert craftsmanship and innovative design since 2005.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <!--회사소개-->
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#work">Our Work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Kitchen Remodeling</a></li>
+                        <li><a href="#services">Bathroom Renovation</a></li>
+                        <li><a href="#services">Living Space Redesign</a></li>
+                        <li><a href="#services">Whole Home Remodel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i> 123-456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@mbremodeling.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Los Angeles, CA 90001</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 M&B Remodeling. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Button -->
+    <!-- <button class="chat-button" id="chatButton" aria-label="Let's Chat">
+        <i class="fas fa-comments"></i>
+        <span>Let's Chat!</span>
+    </button> -->
+
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
