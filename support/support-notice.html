@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="공지사항 - 고객지원">
+    <title>공지사항 | 고객지원</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-hero { position: relative; width: 100%; height: 45vh; min-height: 360px; background: linear-gradient(135deg, #2C2C2C 0%, #555 100%); display: flex; align-items: center; justify-content: center; }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; color: white; }
+        .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 16px; }
+        .content-section { padding: var(--spacing-xl) 0; }
+        .notice-list { max-width: 900px; margin: 0 auto; }
+        .notice-item { display: flex; align-items: center; padding: var(--spacing-md) 0; border-bottom: 1px solid var(--neutral-gray); gap: var(--spacing-md); }
+        .notice-item:last-child { border-bottom: none; }
+        .notice-date { font-size: 14px; color: #888; min-width: 100px; }
+        .notice-title { font-weight: 500; }
+        .notice-item a { color: inherit; }
+        .notice-item a:hover { color: var(--accent-orange); }
+        .no-notice { text-align: center; padding: var(--spacing-lg); color: #666; }
+        @media (max-width: 768px) { .page-hero { height: 35vh; min-height: 280px; } .notice-item { flex-wrap: wrap; } }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">공지사항</h1>
+            <p>새소식과 공지를 안내합니다</p>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">공지사항</h2>
+                <p class="section-subtitle">서비스·운영 관련 공지사항입니다.</p>
+            </div>
+            <div class="notice-list">
+                <div class="notice-item">
+                    <span class="notice-date">2024.02.01</span>
+                    <a href="#" class="notice-title">2024년 상반기 정기 점검 안내</a>
+                </div>
+                <div class="notice-item">
+                    <span class="notice-date">2024.01.15</span>
+                    <a href="#" class="notice-title">스마트 물류 서비스 업데이트 안내</a>
+                </div>
+                <div class="notice-item">
+                    <span class="notice-date">2024.01.02</span>
+                    <a href="#" class="notice-title">연말연시 고객센터 운영 안내</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

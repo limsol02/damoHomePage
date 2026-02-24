@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="인재채용 - 함께 성장할 인재를 찾습니다">
+    <title>인재채용 | M&B Remodeling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-hero { position: relative; width: 100%; height: 50vh; min-height: 400px; background-image: url('../images/fourth-slide.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+        .page-hero .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; color: white; }
+        .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 16px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .content-section { padding: var(--spacing-xl) 0; }
+        .content-section .section-description { text-align: center; max-width: 800px; margin: 0 auto var(--spacing-md); }
+        .jobs-list { max-width: 900px; margin: 0 auto; }
+        .job-card { background: var(--neutral-light); border-radius: var(--radius-md); padding: var(--spacing-md) var(--spacing-lg); margin-bottom: var(--spacing-sm); border-left: 4px solid var(--accent-orange); transition: var(--transition-base); box-shadow: var(--shadow-card); }
+        .job-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+        .job-card h3 { font-family: var(--font-primary); margin-bottom: 8px; color: var(--text-dark); font-size: 1.25rem; }
+        .job-meta { font-size: 14px; color: #666; margin-bottom: 12px; }
+        .job-meta span { margin-right: 20px; }
+        .job-meta i { color: var(--brand-brown); margin-right: 6px; width: 16px; }
+        .job-desc { font-size: 15px; line-height: 1.7; color: #555; }
+        .job-apply { display: inline-block; margin-top: 12px; padding: 12px 24px; background: var(--accent-orange); color: #fff; border-radius: var(--radius-sm); font-weight: 600; text-decoration: none; font-size: 14px; transition: var(--transition-base); }
+        .job-apply:hover { background: var(--accent-orange-hover); color: #fff; transform: translateY(-2px); }
+        .recruit-cta { text-align: center; margin-top: var(--spacing-lg); }
+        .recruit-cta .btn-primary { display: inline-block; padding: 16px 32px; background: var(--brand-brown); color: #fff; border-radius: var(--radius-md); font-weight: 600; text-decoration: none; transition: var(--transition-base); }
+        .recruit-cta .btn-primary:hover { background: var(--brand-brown-light); transform: translateY(-2px); }
+        @media (max-width: 768px) { .page-hero { height: 40vh; min-height: 300px; } .job-card { padding: var(--spacing-sm) var(--spacing-md); } }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">인재채용</h1>
+            <p>함께 성장할 인재를 찾습니다</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2 class="section-title">채용공고</h2>
+                <p class="section-subtitle">현재 진행 중인 채용 포지션입니다. 관심 있는 분은 이력서를 문의 메일로 보내 주세요.</p>
+            </div>
+            <p class="section-description">
+                M&B Remodeling은 기술과 혁신으로 미래를 만드는 팀원을 모십니다. 아래 포지션에 지원하시거나, 다른 분야에 관심이 있으시면 <a href="/index.html#contact" style="color: var(--accent-orange); font-weight: 600;">문의하기</a>를 이용해 주세요.
+            </p>
+            <div class="jobs-list">
+                <div class="job-card">
+                    <h3>AI/ML 엔지니어</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-briefcase"></i> 정규직</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 서울</span>
+                        <span><i class="fas fa-clock"></i> 상시채용</span>
+                    </div>
+                    <p class="job-desc">AI·머신러닝 기반 제품 개발 및 서비스 최적화를 담당합니다. 실무 경력 3년 이상 우대.</p>
+                    <a href="/index.html#contact" class="job-apply">지원하기</a>
+                </div>
+                <div class="job-card">
+                    <h3>풀스택 개발자</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-briefcase"></i> 정규직</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 서울 / 재택 가능</span>
+                        <span><i class="fas fa-clock"></i> 상시채용</span>
+                    </div>
+                    <p class="job-desc">웹·백엔드 서비스 설계 및 개발. React, Node.js 등 실무 경험자 우대.</p>
+                    <a href="/index.html#contact" class="job-apply">지원하기</a>
+                </div>
+                <div class="job-card">
+                    <h3>비즈니스 개발 / 영업</h3>
+                    <div class="job-meta">
+                        <span><i class="fas fa-briefcase"></i> 정규직</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 서울</span>
+                        <span><i class="fas fa-clock"></i> 상시채용</span>
+                    </div>
+                    <p class="job-desc">B2B 영업 및 파트너십 구축. IT·솔루션 영업 경험자 우대.</p>
+                    <a href="/index.html#contact" class="job-apply">지원하기</a>
+                </div>
+            </div>
+            <div class="recruit-cta">
+                <p class="section-description" style="margin-bottom: 16px;">채용 문의: <a href="mailto:hr@mbremodeling.com" style="color: var(--accent-orange); font-weight: 600;">hr@mbremodeling.com</a></p>
+                <a href="/index.html#contact" class="btn-primary">문의하기로 지원하기</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

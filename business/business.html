@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="비지니스 - 우리의 제품 소개">
+    <title>비지니스 | 제품 소개</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-hero { position: relative; width: 100%; height: 50vh; min-height: 400px; background-image: url('../images/downloaded-image.png'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+        .page-hero .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; color: white; }
+        .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 16px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .content-section { padding: var(--spacing-xl) 0; }
+        @media (max-width: 768px) { .page-hero { height: 40vh; min-height: 300px; } }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">비지니스</h1>
+            <p>우리의 제품과 솔루션을 소개합니다</p>
+        </div>
+    </section>
+
+    <section class="services content-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">제품 소개</h2>
+                <p class="section-subtitle">고객의 needs에 맞춘 다양한 제품과 서비스를 제공합니다</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3 class="service-title">AI 솔루션</h3>
+                    <p class="service-description">비즈니스 효율을 높이는 AI 기반 솔루션으로 업무 프로세스를 혁신합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-truck"></i></div>
+                    <h3 class="service-title">물류 최적화</h3>
+                    <p class="service-description">스마트 경로와 실시간 관리를 통해 물류 비용을 절감하고 속도를 높입니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="service-title">데이터 분석</h3>
+                    <p class="service-description">데이터 기반 인사이트로 의사결정을 지원하고 성과를 개선합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="service-title">보안·컨설팅</h3>
+                    <p class="service-description">맞춤형 보안 및 컨설팅으로 안정적인 비즈니스 환경을 구축합니다.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-lg);">
+                <a href="../index.html#contact" class="btn btn-primary">제품 문의하기</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

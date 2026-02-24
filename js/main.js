@@ -1,69 +1,69 @@
 // ================================
-// Navigation Functionality
+// Navigation Functionality (네비가 partial 로드 후 초기화)
 // ================================
+function initNav() {
+    var navbar = document.getElementById('navbar');
+    var navToggle = document.getElementById('navToggle');
+    var navMenu = document.getElementById('navMenu');
+    var navLinks = document.querySelectorAll('.nav-link');
+    if (!navbar) return;
 
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+    });
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
     }
-});
 
-// Mobile menu toggle
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
+    function closeNav() {
+        if (navToggle) navToggle.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+        document.querySelectorAll('.nav-item.open').forEach(function(el) { el.classList.remove('open'); });
+    }
 
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-function closeNav() {
-    if (navToggle) navToggle.classList.remove('active');
-    if (navMenu) navMenu.classList.remove('active');
-    document.querySelectorAll('.nav-item.open').forEach(el => el.classList.remove('open'));
-}
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        const navItem = this.closest('.nav-item--dropdown');
-        if (navItem && window.innerWidth <= 768) {
-            e.preventDefault();
-            navItem.classList.toggle('open');
-            return;
-        }
-        closeNav();
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var navItem = this.closest('.nav-item--dropdown');
+            if (navItem && window.innerWidth <= 768) {
+                e.preventDefault();
+                navItem.classList.toggle('open');
+                return;
+            }
+            closeNav();
+        });
     });
-});
-document.querySelectorAll('.nav-sublink').forEach(link => {
-    link.addEventListener('click', () => closeNav());
-});
-
-// Active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-
-function setActiveNavLink() {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (navLink) navLink.classList.add('active');
-        }
+    document.querySelectorAll('.nav-sublink').forEach(function(link) {
+        link.addEventListener('click', closeNav);
     });
+
+    var sections = document.querySelectorAll('section[id]');
+    function setActiveNavLink() {
+        var scrollY = window.pageYOffset;
+        sections.forEach(function(section) {
+            var sectionHeight = section.offsetHeight;
+            var sectionTop = section.offsetTop - 100;
+            var sectionId = section.getAttribute('id');
+            var navLink = document.querySelector('.nav-link[href="#' + sectionId + '"]');
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navLinks.forEach(function(l) { l.classList.remove('active'); });
+                if (navLink) navLink.classList.add('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', setActiveNavLink);
 }
 
-window.addEventListener('scroll', setActiveNavLink);
+document.addEventListener('nav-loaded', initNav);
+if (document.getElementById('nav-placeholder') && !document.getElementById('navbar')) {
+    /* 네비가 placeholder면 nav.js가 로드 후 initNav 호출 */
+} else if (document.getElementById('navbar')) {
+    initNav();
+}
 
 // ================================
 // Slideshow Functionality (2 Slides)
@@ -188,7 +188,8 @@ initScrollAnimations();
 // Chat & Detail Button Functionality
 // ================================
 const chatButton = document.getElementById('chatButton');
-const detailBtn = document.getElementById('detailBtn');
+const detailBtn = document.getElementById('detailBtn');   // slide2 (slide2-bg) → 스마트 물류
+const detailBtn1 = document.getElementById('detailBtn1'); // 그 외 슬라이드 → 회사소개
 
 // chatButton.addEventListener('click', () => {
 //     // Simulate opening a chat window
@@ -198,10 +199,17 @@ const detailBtn = document.getElementById('detailBtn');
 //     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 // });
 
-// Detail button functionality - redirect to index2.html
-detailBtn.addEventListener('click', () => {
-    window.location.href = 'index2.html';
-});
+// 자세히 알아보기: slide2-bg → 스마트 물류, 나머지 슬라이드 → 회사소개
+if (detailBtn) {
+    detailBtn.addEventListener('click', () => {
+        window.location.href = 'business/smart-logistics.html';
+    });
+}
+if (detailBtn1) {
+    detailBtn1.addEventListener('click', () => {
+        window.location.href = 'about/about-altri.html';
+    });
+}
 
 // ================================
 // Contact Form Handling

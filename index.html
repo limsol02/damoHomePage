@@ -18,47 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                <img src="images/logo.png" alt="Logo" style="height: 40px; width: auto;">
-            </a>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link active">Home</a>
-                <div class="nav-item nav-item--dropdown">
-                    <a href="smart-logistics.html" class="nav-link">비지니스 <i class="fas fa-chevron-down nav-arrow"></i></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="smart-logistics.html" class="nav-sublink">스마트 물류</a></li>
-                        <li><a href="smart-ito.html" class="nav-sublink">스마트 ITO</a></li>
-                    </ul>
-                </div>
-                <div class="nav-item nav-item--dropdown">
-                    <a href="about-altri.html" class="nav-link">회사소개 <i class="fas fa-chevron-down nav-arrow"></i></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="about-altri.html" class="nav-sublink">앨트리</a></li>
-                        <li><a href="about-service.html" class="nav-sublink">서비스</a></li>
-                        <li><a href="about-partner.html" class="nav-sublink">파트너</a></li>
-                        <li><a href="about-location.html" class="nav-sublink">오시는 길</a></li>
-                    </ul>
-                </div>
-                <a href="recruitment.html" class="nav-link">인재채용</a>
-                <div class="nav-item nav-item--dropdown">
-                    <a href="support-notice.html" class="nav-link">고객지원 <i class="fas fa-chevron-down nav-arrow"></i></a>
-                    <ul class="nav-dropdown">
-                        <li><a href="support-notice.html" class="nav-sublink">공지사항</a></li>
-                        <li><a href="support-contact.html" class="nav-sublink">문의하기</a></li>
-                        <li><a href="support-tech.html" class="nav-sublink">기술지원</a></li>
-                    </ul>
-                </div>
-            </div>
-            <button class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -75,7 +35,6 @@
                         <i class="fas fa-info-circle"></i> 
                         <span>자세히 알아보기</span>
                     </button>
-            </div>
             </div>
             <div class="slide" style="background-image: url('images/slide2-bg.jpg')">
                 <div class="slide-content">
@@ -124,14 +83,15 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title">Crafting Dream Homes Since 2005</h2>
-                    <p class="section-description">
-                        M&B Remodeling is your trusted partner in creating exceptional living spaces. With over 18 years of experience, we specialize in transforming houses into dream homes through meticulous attention to detail, innovative design, and superior craftsmanship.
+                    <h2 class="section-title">엘트리는</h2>
+                    <p class="section-description about-intro-text">
+                        다양한 데이터를 기반으로<br>
+                        혁신적으로 운영, 공유하고 융합하여<br>
+                        현재와 미래의 가치를 연결하는 <br>
+                        전문가 집단입니다.
                     </p>
-                    <p class="section-description">
-                        Our team of skilled professionals is committed to delivering projects that exceed expectations, on time and within budget. From concept to completion, we work closely with homeowners to bring their vision to life.
-                    </p>
-                    <div class="about-stats">
+                    <a href="about/about-altri.html" class="btn btn-primary about-intro-btn">엘트리 소개 바로가기</a>
+                    <!-- <div class="about-stats">
                         <div class="stat-item">
                             <h3 class="stat-number" data-target="500">0</h3>
                             <p class="stat-label">Projects Completed</p>
@@ -144,17 +104,94 @@
                             <h3 class="stat-number" data-target="98">0</h3>
                             <p class="stat-label">Client Satisfaction</p>
                         </div>
+                    </div> -->
+                </div>
+                <!-- <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern living room interior" loading="lazy">
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (검은 배경) -->
+    <section class="about about--dark" id="about-dark">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">엘트리는</h2>
+                    <p class="section-description about-intro-text">
+                        물류 데이터를 중심으로<br>
+                         개별 기술들을 연결하고,<br>
+                        전체 서비스 및 플랫폼으로 확대해 나가며<br>
+                        고객과 함께 디지털 혁신의 새로운 방식을 만들어 갑니다.
+                    </p>
+                    <a href="business/smart-logistics.html" class="btn btn-primary about-intro-btn">솔루션소개 바로가기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership & Recruit (회색 배경, 좌우 반 나눔) -->
+    <section class="about about--gray about--split" id="partnership-recruit">
+        <div class="container">
+            <div class="about-split-row">
+                <div class="about-split-col" id="partnership">
+                    <div class="about-text">
+                        <h2 class="section-title">Partnership</h2>
+                        <p class="section-description about-intro-text">
+                            새로운 사업 파트너 및<br>
+                            서비스 제휴를 기다립니다.
+                        </p>
+                        <a href="about/about-altri.html#partner" class="btn btn-primary about-intro-btn about-intro-btn--dark">바로가기</a>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Modern living room interior" loading="lazy">
+                <div class="about-split-col" id="recruit">
+                    <div class="about-text">
+                        <h2 class="section-title">Recruit</h2>
+                        <p class="section-description about-intro-text">
+                            혁신적인 아이디어로<br>
+                            IT서비스를 함께 만들어가고자 하는 분들을 모십니다.
+                        </p>
+                        <a href="recruitment/recruitment.html" class="btn btn-primary about-intro-btn about-intro-btn--dark">바로가기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (하늘색 배경, 흰 글씨) -->
+    <section class="about about--sky" id="about-sky">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">엘트리는</h2>
+                    <p class="section-description about-intro-text">
+                        데이터 기술과 분석 역량을 바탕으로<br> 제조 현장부터 통합 물류, 고객 접점 및 업무 효율까지,<br>
+                        Digitalization을 통한 차별적 가치를 추구하는 젊은 기업입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의 유도 섹션 (회색 배경, 검은 글씨) -->
+    <section class="about about--gray" id="contact-cta">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">기업의 디지털 혁신을 고민하고 계신가요?</h2>
+                    <p class="section-description about-intro-text">
+                        엘트리의 전문가가<br>
+                        가장 빠르고 정확한 답변을 드리겠습니다.
+                    </p>
+                    <a href="support/support-contact.html" class="btn btn-primary about-intro-btn about-intro-btn--dark">담당자 정보</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="manufacturing">
+    <!-- <section class="services" id="manufacturing">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Services</h2>
@@ -205,10 +242,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Process Section -->
-    <section class="process">
+    <!-- <section class="process">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Process</h2>
@@ -237,10 +274,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Portfolio Section -->
-    <section class="portfolio" id="services">
+    <!-- <section class="portfolio" id="services">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Our Work</h2>
@@ -291,10 +328,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <!-- <section class="testimonials">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">What Our Clients Say</h2>
@@ -345,10 +382,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA Section -->
-    <section class="cta">
+    <!-- <section class="cta">
         <div class="container">
             <div class="cta-content">
                 <h2 class="cta-title">Ready to Transform Your Home?</h2>
@@ -358,10 +395,10 @@
                 </button>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
@@ -440,61 +477,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <i class="fas fa-home"></i>
-                        <span>M&B Remodeling</span>
-                    </div>
-                    <p class="footer-description">Creating exceptional living spaces with expert craftsmanship and innovative design since 2005.</p>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">바로가기</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="smart-logistics.html">스마트 물류</a></li>
-                        <li><a href="smart-ito.html">스마트 ITO</a></li>
-                        <li><a href="about-altri.html">회사소개</a></li>
-                        <li><a href="recruitment.html">인재채용</a></li>
-                        <li><a href="support-notice.html">고객지원</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">서비스</h4>
-                    <ul class="footer-links">
-                        <li><a href="smart-logistics.html">스마트 물류</a></li>
-                        <li><a href="support-tech.html">기술지원</a></li>
-                        <li><a href="support-contact.html">문의하기</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-phone-alt"></i> 123-456-7890</li>
-                        <li><i class="fas fa-envelope"></i> info@mbremodeling.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Los Angeles, CA 90001</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 M&B Remodeling. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <!-- Chat Button -->
-    <!-- <button class="chat-button" id="chatButton" aria-label="Let's Chat">
-        <i class="fas fa-comments"></i>
-        <span>Let's Chat!</span>
-    </button> -->
-
-
-    <!-- Main JavaScript -->
+    <script src="js/nav.js"></script>
+    <script src="js/footer.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
