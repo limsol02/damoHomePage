@@ -12,7 +12,7 @@
 
     var fallbackHtml = '<nav class="navbar" id="navbar">' +
         '<div class="nav-container">' +
-        '<a href="index.html" class="nav-logo"><img src="images/logo-ltree.png" alt="LTREE" style="height: 40px; width: auto;"></a>' +
+        '<a href="index.html" class="nav-logo"><img src="images/logo-ltree.png" alt="LTREE" style="height: 50px; width: auto;"></a>' +
         '<div class="nav-menu" id="navMenu">' +
         '<div class="nav-item nav-item--dropdown">' +
         '<a href="business/smart-logistics.html" class="nav-link">비지니스 <i class="fas fa-chevron-down nav-arrow"></i></a>' +

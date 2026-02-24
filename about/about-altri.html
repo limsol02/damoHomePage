@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="회사소개 - 앨트리, 서비스, 파트너, 오시는 길">
     <title>회사소개 | LTREE</title>
+    <link rel="icon" type="image/png" href="../images/loga.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,29 +25,29 @@
         .content-section { padding: var(--spacing-xl) 0; scroll-margin-top: 85px; }
         .content-section .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .about-intro { text-align: center; margin-bottom: var(--spacing-lg); }
-        .about-intro .lead { font-size: 19px; font-weight: 500; color: var(--text-dark); margin-bottom: 8px; }
-        .about-intro .tagline { font-size: 16px; color: var(--text-muted); }
+        .about-intro .lead { font-size: 19px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+        .about-intro .tagline { font-size: 17px; color: var(--text-muted); }
         .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); margin-top: var(--spacing-lg); }
         @media (max-width: 768px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 480px) { .values-grid { grid-template-columns: 1fr; } }
         .value-card { text-align: center; padding: var(--spacing-md); background: var(--neutral-light); border-radius: var(--radius-md); border-top: 4px solid var(--color-teal); }
         .value-card h4 { font-family: var(--font-primary); font-size: 18px; font-weight: 600; letter-spacing: var(--letter-spacing-tight); color: var(--text-dark); margin-bottom: 8px; }
-        .value-card .tagline { font-size: 14px; line-height: 1.5; color: var(--text-muted); margin: 0; }
+        .value-card .tagline { font-size: 17px; line-height: 1.5; color: var(--text-muted); margin: 0; }
         .brand-story { margin-top: var(--spacing-xl); text-align: center; }
-        .brand-story .tagline { font-size: 15px; line-height: 1.7; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
+        .brand-story .tagline { font-size: 17px; line-height: 1.7; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
         .section-title { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 28px); font-weight: 600; letter-spacing: var(--letter-spacing-tight); color: var(--text-dark); margin-bottom: 8px; }
-        .section-tagline { font-size: 15px; color: var(--text-muted); margin-bottom: 20px; }
+        .section-tagline { font-size: 17px; color: var(--text-muted); margin-bottom: 20px; }
         .service-block { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--neutral-gray); }
         .service-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .service-block h3 { font-family: var(--font-primary); font-size: 20px; font-weight: 600; letter-spacing: var(--letter-spacing-tight); color: var(--text-dark); margin-bottom: 8px; }
-        .service-block .tagline { font-size: 15px; line-height: 1.6; color: var(--text-muted); margin: 0; }
+        .service-block .tagline { font-size: 17px; line-height: 1.6; color: var(--text-muted); margin: 0; }
         .service-section .container { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
         .service-section .service-block { margin-bottom: 0; padding-bottom: 0; border-bottom: none; border-right: 1px solid var(--neutral-gray); padding-right: var(--spacing-lg); }
         .service-section .service-block:last-child { border-right: none; padding-right: 0; }
         @media (max-width: 900px) { .service-section .container { grid-template-columns: 1fr; } .service-section .service-block { border-right: none; padding-right: 0; border-bottom: 1px solid var(--neutral-gray); padding-bottom: var(--spacing-lg); margin-bottom: var(--spacing-md); } .service-section .service-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; } }
         .location-card { max-width: 600px; margin: 0 auto; background: var(--neutral-light); border-radius: var(--radius-md); padding: var(--spacing-lg); }
         .location-card h3 { font-family: var(--font-primary); margin-bottom: var(--spacing-sm); }
-        .location-card p { margin-bottom: 12px; color: var(--text-muted); font-size: 15px; }
+        .location-card p { margin-bottom: 12px; color: var(--text-muted); font-size: 17px; }
         .location-card a { color: var(--color-teal); font-weight: 600; }
         .about-intro-img { margin-bottom: var(--spacing-md); border-radius: var(--radius-md); overflow: hidden; max-width: 500px; margin-left: auto; margin-right: auto; }
         .about-intro-img img { width: 100%; height: auto; max-height: 220px; object-fit: cover; display: block; }
@@ -64,8 +65,8 @@
         .partner-card-logo img { max-height: 64px; width: auto; max-width: 160px; object-fit: contain; }
         .partner-card-body { padding: var(--spacing-lg); flex: 1; }
         .partner-card h3 { font-family: var(--font-primary); font-size: 18px; font-weight: 600; letter-spacing: var(--letter-spacing-tight); color: var(--text-dark); margin-bottom: 8px; }
-        .partner-card .tagline { font-size: 14px; line-height: 1.55; color: var(--text-muted); margin-bottom: 12px; }
-        .partner-link { color: var(--color-teal); font-weight: 500; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
+        .partner-card .tagline { font-size: 17px; line-height: 1.55; color: var(--text-muted); margin-bottom: 12px; }
+        .partner-link { color: var(--color-teal); font-weight: 600; font-size: 17px; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
         .partner-card:hover .partner-link { color: var(--color-indigo); }
         .partner-cta { text-align: center; margin-top: var(--spacing-xl); }
         @media (max-width: 640px) { .partner-cards { grid-template-columns: 1fr; } .partner-card-logo { height: 88px; } .partner-card-logo img { max-height: 52px; } }
@@ -161,7 +162,7 @@
         <div class="container">
             <div class="partner-cards">
                 <a href="https://www.skcc.co.kr/" target="_blank" rel="noopener" class="partner-card">
-                    <div class="partner-card-logo"><img src="../images/sk.jpg" alt="SK C&C"></div>
+                    <div class="partner-card-logo"><img src="../images/sk.png" alt="SK C&C"></div>
                     <div class="partner-card-body">
                         <h3>SK C&C</h3>
                         <p class="tagline">제조·통신·반도체·금융 등 디지털 기술로 고객 가치 제공</p>
@@ -169,7 +170,7 @@
                     </div>
                 </a>
                 <a href="https://www.samsungsds.com/" target="_blank" rel="noopener" class="partner-card">
-                    <div class="partner-card-logo"><img src="../images/samsong.jpg" alt="삼성SDS"></div>
+                    <div class="partner-card-logo"><img src="../images/samsong.png" alt="삼성SDS"></div>
                     <div class="partner-card-body">
                         <h3>삼성SDS</h3>
                         <p class="tagline">클라우드·디지털 물류, 올인원 매니지드 서비스</p>
@@ -177,7 +178,7 @@
                     </div>
                 </a>
                 <a href="https://www.hyundai-autoever.com/kor/main/index.do" target="_blank" rel="noopener" class="partner-card">
-                    <div class="partner-card-logo"><img src="../images/hyundai.jpg" alt="현대오토에버"></div>
+                    <div class="partner-card-logo"><img src="../images/HYUNDAI.png" alt="현대오토에버"></div>
                     <div class="partner-card-body">
                         <h3>현대오토에버</h3>
                         <p class="tagline">차량 소프트웨어·인프라, 글로벌 수준 IT 서비스</p>
@@ -185,7 +186,9 @@
                     </div>
                 </a>
                 <a href="https://thirautech.com/" target="_blank" rel="noopener" class="partner-card">
-                    <div class="partner-card-logo"><img src="../images/ls.jpg" alt="엘에스티라유텍"></div>
+                    <div class="partner-card-logo"><img src="../images/LS.png
+                        
+                          " alt="엘에스티라유텍"></div>
                     <div class="partner-card-body">
                         <h3>엘에스티라유텍</h3>
                         <p class="tagline">SCM·물류 솔루션 개발·공급·컨설팅</p>

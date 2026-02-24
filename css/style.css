@@ -16,7 +16,7 @@
     --color-navy: #2d2842;
     --primary-white: #FFFFFF;
     --text-dark: #2d2842;
-    --text-gray: #4a4563;
+    --text-gray: #6E6E73;
     /* 세련된 회색 톤 (원색 #555, #666, #888 대체) */
     --text-muted: #5c5966;
     --text-soft: #6b6778;
@@ -64,12 +64,13 @@
    ================================ */
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 body {
     font-family: var(--font-secondary);
-    color: var(--text-dark);
+    color: var(--text-gray);
+    font-weight: 600;
     line-height: 1.6;
     letter-spacing: var(--letter-spacing-body);
     background-color: var(--primary-white);
@@ -146,6 +147,10 @@ button {
 /* ================================
    Typography
    ================================ */
+/* 기존 볼드(제목·강조) = 검은색, 그 외 본문 = 회색 + 굵게 */
+h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title, .suite-title, .cta-title {
+    color: var(--text-dark);
+}
 .section-title {
     font-family: var(--font-primary);
     font-size: clamp(36px, 5vw, 48px);
@@ -178,8 +183,8 @@ button {
 .btn {
     display: inline-block;
     padding: 16px 32px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     letter-spacing: 0.02em;
     border-radius: var(--radius-md);
     transition: all var(--transition-base);
@@ -260,7 +265,7 @@ button {
 }
 
 .nav-logo img {
-    height: 60px !important;
+    height: 50px !important;
     width: auto !important;
     display: block;
     vertical-align: middle;
@@ -275,8 +280,8 @@ button {
 }
 
 .nav-link {
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     letter-spacing: 0.02em;
     color: rgba(255, 255, 255, 0.95);
     position: relative;
@@ -302,7 +307,7 @@ button {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--color-teal-light);
 }
@@ -337,7 +342,7 @@ button {
     gap: 4px;
 }
 .nav-arrow {
-    font-size: 10px;
+    font-size: 17px;
     opacity: 0.8;
     transition: transform var(--transition-base);
 }
@@ -370,8 +375,8 @@ button {
 .nav-sublink {
     display: block;
     padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     transition: background var(--transition-base), color var(--transition-base);
 }
@@ -560,7 +565,7 @@ button {
 }
 
 .hero-subtitle {
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: clamp(17px, 2vw, 20px);
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: var(--spacing-lg);
     max-width: 600px;
@@ -570,8 +575,8 @@ button {
 
 /* 라톤테크 스타일: 히어로 리드·CTA */
 .hero-lead {
-    font-size: clamp(13px, 1.5vw, 15px);
-    font-weight: 500;
+    font-size: clamp(17px, 1.5vw, 18px);
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.85);
@@ -590,8 +595,8 @@ button {
     gap: 8px;
     padding: 14px 28px;
     border-radius: var(--radius-sm);
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     letter-spacing: 0.02em;
     text-decoration: none;
     transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
@@ -739,7 +744,7 @@ button {
     color: var(--text-dark);
 }
 .about .service-card .service-description {
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
     color: var(--text-muted);
 }
@@ -801,7 +806,7 @@ button {
    라톤테크 스타일: 섹션 라벨·태그라인·밸류·솔루션·CTA
    ================================ */
 .section-label {
-    font-size: 12px;
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -823,7 +828,7 @@ button {
 }
 .section-tagline {
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 600;
     color: var(--text-muted);
     letter-spacing: 0.02em;
     margin: 0 auto;
@@ -889,7 +894,7 @@ button {
     margin-bottom: 6px;
 }
 .value-desc {
-    font-size: 14px;
+    font-size: 17px;
     color: var(--text-muted);
     line-height: 1.45;
 }
@@ -955,15 +960,15 @@ button {
     margin-bottom: 6px;
 }
 .solution-desc {
-    font-size: 14px;
+    font-size: 17px;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.5;
     margin-bottom: var(--spacing-sm);
     flex-grow: 1;
 }
 .solution-cta {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     color: var(--color-teal-light);
     display: inline-flex;
     align-items: center;
@@ -1035,7 +1040,7 @@ button {
     margin-bottom: 6px;
 }
 .cta-card-desc {
-    font-size: 14px;
+    font-size: 17px;
     color: var(--text-muted);
     line-height: 1.45;
     margin-bottom: var(--spacing-md);
@@ -1047,8 +1052,8 @@ button {
     border-radius: var(--radius-sm);
     background: var(--bg-dark);
     color: var(--primary-white);
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     transition: background var(--transition-base);
 }
 .cta-card-item:hover .cta-card-btn {
@@ -1076,7 +1081,7 @@ button {
     margin-bottom: var(--spacing-sm);
 }
 .cta-strip__tagline {
-    font-size: 16px;
+    font-size: 17px;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: var(--spacing-lg);
     line-height: 1.5;
@@ -1094,7 +1099,7 @@ button {
 .about .about-intro-text {
     font-family: var(--font-primary);
     font-size: clamp(28px, 4vw, 42px);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: var(--letter-spacing-tight);
     line-height: 1.55;
     color: var(--text-dark);
@@ -1170,7 +1175,7 @@ button {
 }
 
 .stat-label {
-    font-size: 13px;
+    font-size: 17px;
     color: var(--text-soft);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1283,7 +1288,7 @@ button {
 
 .about--gray .section-title {
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.7;
     color: var(--text-muted);
     margin-bottom: var(--spacing-md);
@@ -1292,7 +1297,7 @@ button {
 .about--gray .about-intro-text {
     font-family: var(--font-primary);
     font-size: clamp(28px, 4vw, 42px);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: var(--letter-spacing-tight);
     line-height: 1.55;
     color: var(--text-dark);
@@ -1364,7 +1369,7 @@ button {
 }
 
 .service-description {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.6;
     color: var(--text-muted);
 }
@@ -1409,7 +1414,7 @@ button {
 }
 
 .step-description {
-    font-size: 16px;
+    font-size: 17px;
     color: var(--text-muted);
     line-height: 1.6;
 }
@@ -1473,7 +1478,7 @@ button {
 }
 
 .portfolio-category {
-    font-size: 13px;
+    font-size: 17px;
     color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1513,7 +1518,7 @@ button {
 }
 
 .testimonial-text {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.7;
     color: var(--text-muted);
     margin-bottom: var(--spacing-md);
@@ -1535,7 +1540,7 @@ button {
 }
 
 .author-location {
-    font-size: 14px;
+    font-size: 17px;
     color: var(--text-soft);
 }
 
@@ -1575,7 +1580,7 @@ button {
 }
 
 .cta-card__sub {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
     color: var(--text-dark);
     margin-bottom: var(--spacing-md);
@@ -1665,9 +1670,9 @@ button {
 }
 
 .form-group label {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-dark);
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .form-group input,
@@ -1677,7 +1682,7 @@ button {
     border: 2px solid var(--neutral-gray);
     border-radius: var(--radius-sm);
     font-family: inherit;
-    font-size: 16px;
+    font-size: 17px;
     transition: border-color var(--transition-base);
 }
 
@@ -1731,7 +1736,7 @@ button {
 }
 
 .info-text p {
-    font-size: 15px;
+    font-size: 17px;
     color: var(--text-muted);
     line-height: 1.6;
 }
@@ -1845,7 +1850,7 @@ button {
 }
 
 .footer-description {
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
 }
@@ -1874,7 +1879,7 @@ button {
 
 .footer-links a {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 15px;
+    font-size: 17px;
     transition: var(--transition-base);
 }
 
@@ -1894,7 +1899,7 @@ button {
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
-    font-size: 15px;
+    font-size: 17px;
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1907,7 +1912,7 @@ button {
     padding-top: var(--spacing-md);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.6);
-    font-size: 14px;
+    font-size: 17px;
 }
 
 /* ================================
@@ -1926,8 +1931,8 @@ button {
     color: var(--primary-white);
     border-radius: 50px;
     box-shadow: var(--shadow-hover);
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     letter-spacing: 0.02em;
     z-index: 10;
     transition: all var(--transition-base);
@@ -2067,7 +2072,7 @@ button {
     }
     .nav-sublink {
         padding: 10px 0 10px 8px;
-        font-size: 14px;
+        font-size: 17px;
         border-left: 2px solid rgba(255,255,255,0.3);
         margin-left: 8px;
     }
@@ -2327,9 +2332,9 @@ button {
 }
 
 .pangolin-card .sub {
-    font-size: 13px;
+    font-size: 17px;
     color: var(--accent-orange);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.02em;
     margin: 0 0 8px 0;
 }
@@ -2339,7 +2344,7 @@ button {
     opacity: 0;
     font-weight: 600;
     color: var(--text-dark);
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.7;
     margin: 0 0 8px 0;
     backface-visibility: hidden;
@@ -2357,7 +2362,7 @@ button {
 .pangolin-card > p:not(.sub):not(.intro) {
     visibility: hidden;
     opacity: 0;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.7;
     color: var(--text-muted);
     margin: 0;
@@ -2473,7 +2478,7 @@ button {
 }
 
 .insight-item p {
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
     color: var(--text-muted);
 }
