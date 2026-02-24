@@ -2450,37 +2450,86 @@ h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title
 }
 
 .insight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: var(--spacing-lg);
+    padding: 0;
+    background: var(--primary-white);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+    animation: insight-card-in 0.6s ease backwards;
+}
+
+.insight-item:nth-child(1) { animation-delay: 0.05s; }
+.insight-item:nth-child(2) { animation-delay: 0.15s; }
+.insight-item:nth-child(3) { animation-delay: 0.25s; }
+
+@keyframes insight-card-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.insight-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(45, 40, 66, 0.12);
 }
 
 .insight-item-img {
-    margin-bottom: var(--spacing-sm);
-    border-radius: var(--radius-md);
+    width: 100%;
+    aspect-ratio: 16/10;
+    max-height: 160px;
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .insight-item-img img {
     width: 100%;
-    max-width: 280px;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    margin: 0 auto;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.insight-item:hover .insight-item-img img {
+    transform: scale(1.06);
+}
+
+.insight-item h4,
+.insight-item p {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
 }
 
 .insight-item h4 {
     font-family: var(--font-primary);
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: var(--letter-spacing-tight);
     color: var(--text-dark);
-    margin-bottom: 12px;
+    margin-bottom: 6px;
+    padding-top: var(--spacing-md);
+    transition: color 0.25s ease;
+}
+
+.insight-item:hover h4 {
+    color: var(--color-teal);
 }
 
 .insight-item p {
     font-size: 17px;
     line-height: 1.6;
     color: var(--text-muted);
+    margin: 0 0 var(--spacing-md);
+    padding-top: 0;
 }
 
 @media (max-width: 768px) {
@@ -2491,5 +2540,9 @@ h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title
 
     .insight-grid {
         grid-template-columns: 1fr;
+    }
+
+    .insight-item-img {
+        max-height: 200px;
     }
 }

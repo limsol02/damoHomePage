@@ -10,7 +10,10 @@ function initNav() {
 
     var heroEl = document.querySelector('.hero');
     var heroHeight = heroEl ? heroEl.offsetHeight : 400;
+    var isSubpage = !heroEl; // 히어로 없으면 서브페이지 → 맨 위에서도 메뉴바 항상 표시
+    if (isSubpage) navbar.classList.add('scrolled');
     window.addEventListener('scroll', function() {
+        if (isSubpage) return;
         var y = window.scrollY;
         if (y > Math.min(heroHeight * 0.4, 280)) navbar.classList.add('scrolled');
         else navbar.classList.remove('scrolled');
