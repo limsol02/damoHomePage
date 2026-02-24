@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .page-hero { position: relative; width: 100%; height: 45vh; min-height: 360px; background: linear-gradient(135deg, #2C2C2C 0%, #555 100%); display: flex; align-items: center; justify-content: center; }
-        .page-hero-content { position: relative; z-index: 2; text-align: center; color: white; }
-        .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 16px; }
+        .page-hero { position: relative; width: 100%; height: 45vh; min-height: 360px; background: linear-gradient(135deg, var(--bg-dark) 0%, var(--color-navy) 100%); display: flex; align-items: center; justify-content: center; }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; color: var(--primary-white); }
+        .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 600; letter-spacing: var(--letter-spacing-tight); margin-bottom: 16px; }
         .content-section { padding: var(--spacing-xl) 0; }
         @media (max-width: 768px) { .page-hero { height: 35vh; min-height: 280px; } }
     </style>
@@ -28,13 +28,12 @@
     </section>
     <section class="content-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header section-header--tight" style="text-align: center;">
                 <h2 class="section-title">파트너 소개</h2>
-                <p class="section-subtitle">신뢰와 협력을 바탕으로 한 파트너 네트워크를 소개합니다.</p>
+                <p class="section-tagline">신뢰와 협력으로 함께 만드는 가치.</p>
             </div>
-            <p class="section-description" style="text-align: center; max-width: 700px; margin: 0 auto;">기술 파트너, 유통 파트너, 고객사와의 협력 사례를 통해 함께 만드는 가치를 소개합니다. 파트너십 문의는 연락처로 요청해 주세요.</p>
             <div style="text-align: center; margin-top: var(--spacing-lg);">
-                <a href="/index.html#contact" class="btn btn-primary">파트너십 문의</a>
+                <a href="../support/support-contact.html" class="btn btn-primary">파트너십 문의</a>
             </div>
         </div>
     </section>

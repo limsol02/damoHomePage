@@ -8,8 +8,11 @@ function initNav() {
     var navLinks = document.querySelectorAll('.nav-link');
     if (!navbar) return;
 
+    var heroEl = document.querySelector('.hero');
+    var heroHeight = heroEl ? heroEl.offsetHeight : 400;
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        var y = window.scrollY;
+        if (y > Math.min(heroHeight * 0.4, 280)) navbar.classList.add('scrolled');
         else navbar.classList.remove('scrolled');
     });
 
@@ -68,52 +71,109 @@ if (document.getElementById('nav-placeholder') && !document.getElementById('navb
 // ================================
 // Slideshow Functionality (2 Slides)
 // ================================
-let slideIndex = 1;
-const slides = document.querySelectorAll('.slide');
-const indicators = document.querySelectorAll('.indicator');
+var slideIndex = 1;
+var slideIntervalId;
+
+function getSlides() {
+    return document.querySelectorAll('.hero .slide');
+}
+function getIndicators() {
+    return document.querySelectorAll('.hero .slide-indicators .indicator');
+}
 
 function changeSlide(n) {
-    showSlide(slideIndex += n);
+    var slides = getSlides();
+    if (!slides.length) return;
+    slideIndex += n;
+    if (slideIndex > slides.length) slideIndex = 1;
+    if (slideIndex < 1) slideIndex = slides.length;
+    showSlide(slideIndex);
 }
 
 function currentSlide(n) {
-    showSlide(slideIndex = n);
+    slideIndex = n;
+    showSlide(slideIndex);
 }
 
 function showSlide(n) {
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    slides[slideIndex - 1].classList.add('active');
-    indicators[slideIndex - 1].classList.add('active');
+    var slides = getSlides();
+    var indicators = getIndicators();
+    if (!slides.length) return;
+
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+    n = slideIndex;
+
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+    }
+    for (var j = 0; j < indicators.length; j++) {
+        indicators[j].classList.remove('active');
+    }
+    slides[n - 1].classList.add('active');
+    if (indicators[n - 1]) indicators[n - 1].classList.add('active');
 }
 
-// Auto-advance slideshow
-setInterval(() => {
-    changeSlide(1);
-}, 5000); // Change slide every 5 seconds
+function initSlideshow() {
+    var prevBtn = document.querySelector('.hero .slide-btn.prev');
+    var nextBtn = document.querySelector('.hero .slide-btn.next');
+    var indicators = document.querySelectorAll('.hero .slide-indicators .indicator');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            changeSlide(-1);
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            changeSlide(1);
+        });
+    }
+    indicators.forEach(function (ind, i) {
+        ind.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            currentSlide(i + 1);
+        });
+    });
+
+    if (slideIntervalId) clearInterval(slideIntervalId);
+    slideIntervalId = setInterval(function () {
+        changeSlide(1);
+    }, 5000);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSlideshow);
+} else {
+    initSlideshow();
+}
 
 // ================================
-// Smooth Scrolling
+// Smooth Scrolling (네비 로드 후 링크에 연결)
 // ================================
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        
-        if (targetSection) {
-            const offsetTop = targetSection.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+function attachSmoothScroll() {
+    var links = document.querySelectorAll('.nav-link');
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var href = link.getAttribute('href');
+            if (href && href.indexOf('#') === 0) {
+                var targetSection = document.querySelector(href);
+                if (targetSection) {
+                    e.preventDefault();
+                    var offsetTop = targetSection.offsetTop - 80;
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                }
+            }
+        });
     });
-});
+}
+document.addEventListener('nav-loaded', attachSmoothScroll);
+if (document.getElementById('navbar')) attachSmoothScroll();
 
 // ================================
 // Counter Animation
@@ -154,35 +214,133 @@ function animateCounters() {
 animateCounters();
 
 // ================================
-// Scroll Animations
+// Scroll Animations (기존 + 밸류/솔루션/CTA 카드 극적 등장)
 // ================================
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.service-card, .process-step, .portfolio-item, .testimonial-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+    const dramaticCards = document.querySelectorAll('.value-card, .solution-card, .cta-card-item');
+
+    var observerDefault = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry, index) {
             if (entry.isIntersecting) {
-                setTimeout(() => {
+                setTimeout(function() {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                }, index * 100); // Stagger animation
-                observer.unobserve(entry.target);
+                }, index * 100);
+                observerDefault.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    animatedElements.forEach(function(el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observerDefault.observe(el);
     });
-    
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(element);
+
+    /* 카드 섹션: 스태거 + 더 극적인 등장 (translateY + scale + opacity) */
+    var observerCards = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var card = entry.target;
+                var idx = Array.prototype.indexOf.call(card.parentElement.children, card);
+                var delay = idx * 120;
+                setTimeout(function() {
+                    card.classList.add('is-revealed');
+                    observerCards.unobserve(card);
+                }, delay);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -80px 0px' });
+
+    dramaticCards.forEach(function(el) {
+        el.classList.add('reveal-card');
+        observerCards.observe(el);
     });
 }
 
 initScrollAnimations();
+
+// ================================
+// About 섹션 스크롤 등장 애니메이션 (제목 → 줄글 → 버튼 순서)
+// ================================
+(function initAboutScrollReveal() {
+    var aboutSections = document.querySelectorAll('section.about');
+    if (!aboutSections.length) return;
+
+    function addInView(section) {
+        section.classList.add('is-inview');
+    }
+
+    function isSectionInView(section) {
+        var rect = section.getBoundingClientRect();
+        var vh = window.innerHeight;
+        return rect.top < vh * 0.9 && rect.bottom > 0;
+    }
+
+    var observer = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) addInView(entry.target);
+            });
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+    );
+
+    aboutSections.forEach(function (section) {
+        observer.observe(section);
+    });
+
+    // 로드·리사이즈 시 화면에 보이는 섹션에 바로 is-inview 부여
+    function checkInViewNow() {
+        aboutSections.forEach(function (section) {
+            if (isSectionInView(section)) addInView(section);
+        });
+    }
+    if (document.readyState === 'complete') {
+        checkInViewNow();
+    } else {
+        window.addEventListener('load', checkInViewNow);
+    }
+    window.addEventListener('load', function () {
+        requestAnimationFrame(checkInViewNow);
+    });
+})();
+
+// ================================
+// 스크롤에 따른 섹션별 body 클래스 (색상·분위기 전환)
+// ================================
+(function initScrollSection() {
+    var sections = [
+        { id: 'home', class: 'scroll-in-hero' },
+        { id: 'about', class: 'scroll-in-about' },
+        { id: 'solutions', class: 'scroll-in-solutions' },
+        { id: 'partnership-recruit', class: 'scroll-in-connect' },
+        { id: 'cta-strip', class: 'scroll-in-cta' }
+    ];
+    var sectionEls = sections.map(function(s) {
+        var el = document.getElementById(s.id);
+        return el ? { el: el, class: s.class } : null;
+    }).filter(Boolean);
+
+    function updateScrollSection() {
+        var y = window.pageYOffset;
+        var vh = window.innerHeight;
+        var active = 'scroll-in-hero';
+        sectionEls.forEach(function(item) {
+            var rect = item.el.getBoundingClientRect();
+            var top = rect.top;
+            var mid = top + rect.height / 2;
+            if (mid < vh * 0.6 && top < vh * 0.8) active = item.class;
+        });
+        document.body.classList.remove('scroll-in-hero', 'scroll-in-about', 'scroll-in-solutions', 'scroll-in-connect', 'scroll-in-cta');
+        document.body.classList.add(active);
+    }
+
+    window.addEventListener('scroll', function() { requestAnimationFrame(updateScrollSection); });
+    window.addEventListener('load', updateScrollSection);
+})();
 
 // ================================
 // Chat & Detail Button Functionality
@@ -435,11 +593,14 @@ portfolioItems.forEach(item => {
     });
 });
 
-// Add ARIA labels dynamically
-navLinks.forEach(link => {
-    const text = link.textContent.trim();
-    link.setAttribute('aria-label', `Navigate to ${text} section`);
-});
+// Add ARIA labels dynamically (네비 링크)
+(function setNavAriaLabels() {
+    var links = document.querySelectorAll('.nav-link');
+    links.forEach(function(link) {
+        var text = link.textContent.trim();
+        if (text) link.setAttribute('aria-label', 'Navigate to ' + text + ' section');
+    });
+})();
 
 // ================================
 // Console Welcome Message
