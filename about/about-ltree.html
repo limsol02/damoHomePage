@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="회사소개 - 앨트리, 서비스, 파트너, 오시는 길">
+    <meta name="description" content="회사소개 - LTREE, 서비스, 파트너, 오시는 길">
     <title>회사소개 | LTREE</title>
     <link rel="icon" type="image/png" href="../images/loga.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,16 +12,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* 챕터별 통일: 색 블록 제거, 한 섹션 안에 제목+내용 */
-        .chapter { padding: var(--spacing-xl) 0; scroll-margin-top: 85px; }
+        /* 챕터별 통일: 소메뉴 이동 시 화면 세로에 딱 맞게 */
+        .chapter { min-height: 100vh; padding: 50px 0; scroll-margin-top: 70px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: flex-start; }
         .chapter:nth-of-type(odd) { background: var(--primary-white); }
         .chapter:nth-of-type(even) { background: var(--neutral-light); }
-        .chapter-header { max-width: 1200px; margin: 0 auto; padding: 0 24px var(--spacing-lg); border-left: 4px solid var(--color-teal); padding-left: var(--spacing-md); }
+        #ltree.chapter { padding-top: 100px; }
+        .chapter-header { max-width: 1200px; margin-left: 246px; margin-bottom: 40px; border-left: 4px solid var(--color-teal); padding-left: var(--spacing-md); }
         .chapter-header .chapter-title { font-family: var(--font-primary); font-size: clamp(24px, 4vw, 32px); font-weight: 600; letter-spacing: var(--letter-spacing-tight); color: var(--text-dark); margin-bottom: 6px; }
         .chapter-header .chapter-tagline { font-size: 15px; color: var(--text-muted); }
-        .chapter .content-section { padding-top: 0; }
-.content-section { padding: var(--spacing-xl) 0; scroll-margin-top: 85px; }
-        .content-section .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .chapter .content-section { padding-top: 0; flex: 1; }
+        .content-section { padding: 10px 0; scroll-margin-top: 100px; }
+        .content-section .container { max-width: 1200px; margin: 0 auto; margin-top: 50px ; padding: 0 24px; }
         .about-intro { text-align: center; margin-bottom: var(--spacing-lg); }
         .about-intro .lead { font-size: 19px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
         .about-intro .tagline { font-size: 17px; color: var(--text-muted); }
@@ -32,13 +33,13 @@
         .value-card h4 { font-family: var(--font-primary); font-size: 18px; font-weight: 600; letter-spacing: var(--letter-spacing-tight); color: var(--text-dark); margin-bottom: 8px; }
         .value-card .tagline { font-size: 17px; line-height: 1.5; color: var(--text-muted); margin: 0; }
         .brand-story { margin-top: var(--spacing-xl); display: flex; align-items: flex-start; gap: var(--spacing-xl); text-align: left; }
-        .brand-story-img { flex-shrink: 0; width: 320px; border-radius: var(--radius-md); overflow: hidden; }
+        .brand-story-img { flex-shrink: 0; width: 400px; border-radius: var(--radius-md); overflow: hidden; }
         .brand-story-img img { width: 100%; height: auto; display: block; object-fit: contain; object-position: left top; }
         .brand-story-body { flex: 1; min-width: 0; }
         .brand-story .section-title { margin-top: 0; }
         .brand-story .tagline { font-size: 17px; line-height: 1.7; color: var(--text-muted); margin: 0 0 1em; }
         .brand-story .tagline:last-child { margin-bottom: 0; }
-        @media (max-width: 768px) { .brand-story { flex-direction: column; align-items: center; text-align: center; } .brand-story-img { width: 100%; max-width: 360px; } }
+        @media (max-width: 768px) { .brand-story { flex-direction: column; align-items: center; text-align: center; } .brand-story-img { width: 100%; max-width: 432px; } }
         .section-title { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 28px); font-weight: 600; letter-spacing: var(--letter-spacing-tight); color: var(--text-dark); margin-bottom: 8px; }
         .section-tagline { font-size: 17px; color: var(--text-muted); margin-bottom: 20px; }
         .service-block { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--neutral-gray); }
@@ -57,22 +58,22 @@
         .about-intro-img img { width: 100%; height: auto; max-height: 220px; object-fit: cover; display: block; }
         .value-card-img { margin-bottom: var(--spacing-sm); border-radius: var(--radius-sm); overflow: hidden; }
         .value-card-img img { width: 100%; height: auto; max-height: 120px; object-fit: cover; display: block; }
-        .service-block-img { margin-bottom: var(--spacing-md); border-radius: var(--radius-md); overflow: hidden; max-width: 400px; }
-        .service-block-img img { width: 100%; height: auto; max-height: 180px; object-fit: cover; display: block; }
+        .service-block-img { margin-bottom: var(--spacing-md); border-radius: var(--radius-md); overflow: hidden; width: 300px; height: 200px; }
+        .service-block-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
         .partner-section .container { max-width: 1150px; }
         .partner-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); margin-top: var(--spacing-md); }
         .partner-card { background: var(--primary-white); border-radius: var(--radius-md); box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid var(--neutral-gray); overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.25s ease, transform 0.25s ease; color: inherit; text-decoration: none; }
         .partner-card:hover { box-shadow: 0 8px 28px rgba(91, 79, 139, 0.12); transform: translateY(-2px); }
-        .partner-card-logo { height: 150px; padding: var(--spacing-md) var(--spacing-lg); display: flex; align-items: center; justify-content: center; background: var(--neutral-light); border-bottom: 1px solid var(--neutral-gray); }
-        .partner-card-logo img { max-height: 200px; width: auto; max-width: 200px; object-fit: contain; }
+        .partner-card-logo { height: 120px; padding: var(--spacing-sm) var(--spacing-md); display: flex; align-items: center; justify-content: center; background: var(--neutral-light); border-bottom: 1px solid var(--neutral-gray); }
+        .partner-card-logo img { max-height: 120px; width: auto; max-width: 200px; object-fit: contain; }
         .partner-card-body { padding: var(--spacing-lg); flex: 1; }
         .partner-card h3 { font-family: var(--font-primary); font-size: 18px; font-weight: 600; letter-spacing: var(--letter-spacing-tight); color: var(--text-dark); margin-bottom: 8px; }
         .partner-card .tagline { font-size: 17px; line-height: 1.55; color: var(--text-muted); margin-bottom: 12px; }
         .partner-link { color: var(--color-teal); font-weight: 600; font-size: 17px; display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
         .partner-card:hover .partner-link { color: var(--color-indigo); }
-        .partner-cta { text-align: center; margin-top: var(--spacing-xl); }
+        .partner-cta { text-align: center; margin-top: 10px; }
         @media (max-width: 640px) { .partner-cards { grid-template-columns: 1fr; } .partner-card-logo { height: 88px; } .partner-card-logo img { max-height: 52px; } }
-        .content-section--location { padding-top: var(--spacing-lg); padding-bottom: var(--spacing-xl); }
+        .content-section--location { padding-top: 10px; padding-bottom: 10px; }
         .location-map-full { width: 100%; max-width: 1200px; margin: 0 auto var(--spacing-lg); height: 360px; border: none; overflow: hidden; border-radius: var(--radius-md); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
         .location-map-full iframe { display: block; width: 100%; height: 100%; border: 0; }
         .location-address { padding: 0 0 var(--spacing-lg); }
@@ -85,48 +86,23 @@
 <body>
     <div id="nav-placeholder"></div>
 
-    <section id="altri" class="chapter">
+    <section id="ltree" class="chapter">
         <div class="chapter-header">
-            <h1 class="chapter-title">앨트리</h1>
+            <h1 class="chapter-title">LTREE</h1>
             <p class="chapter-tagline">스마트한 기술로 우리 모두를 위한 변화를.</p>
         </div>
         <div class="content-section">
         <div class="container">
             <div class="about-intro">
-                <div class="about-intro-img"><img src="../images/placeholder-image.jpg" alt="앨트리"></div>
-                <p class="lead">디지털 데이터를 플랫폼화해 운영·공유·융합하는 젊은 기업입니다.</p>
-                <p class="tagline">디지털 전환에 대한 합리적인 답을 앨트리의 경험과 노하우로 제시합니다.</p>
             </div>
-            <h2 class="section-title" style="text-align: center;">Growing Together</h2>
-            <p class="section-tagline" style="text-align: center;">함께 만드는 변화와 기술. Code Frontier, 앨트리가 일하는 방식입니다.</p>
             <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-card-img"><img src="../images/placeholder-image.jpg" alt="혁신"></div>
-                    <h4>혁신</h4>
-                    <p class="tagline">R&D 역량 강화, 시장 선도</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-img"><img src="../images/placeholder-image.jpg" alt="전문"></div>
-                    <h4>전문</h4>
-                    <p class="tagline">디지털 기술 확보, 고객 전환 리딩</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-img"><img src="../images/placeholder-image.jpg" alt="협력"></div>
-                    <h4>협력</h4>
-                    <p class="tagline">신뢰·투명·동반성장</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-img"><img src="../images/placeholder-image.jpg" alt="자유"></div>
-                    <h4>자유</h4>
-                    <p class="tagline">유연한 도전, 젊은 합리주의</p>
-                </div>
             </div>
             <div class="brand-story">
                 <div class="brand-story-img"><img src="../images/ltree_tree_img.png" alt="브랜드 스토리"></div>
                 <div class="brand-story-body">
-                    <h2 class="section-title">브랜드 스토리</h2><br>
-                    <p class="tagline">앨트리는 5년 전 창립된 스타트업으로,<br>‘Lucky Tree(행운의 나무)’에서 이름을 얻었습니다.<br> 기술의 힘을 믿으며며 혁신적인 솔루션으로<br> 고객의 문제를 해결하고 비즈니스 성장을 돕는 것이 우리의 목표입니다.</p>
-                    <p class="tagline">‘Learning Tree’라는 의미처럼 지속적인 학습과 성장을 추구합니다. <br>고객과 함께 성장하며, 그 과정에서 우리 자신도 발전합니다.<br> 기술의 미래를 선도하고, 고객과 함께 성공의 길을 걸어가겠습니다.</p>
+                    <h2 class="section-title"><br>브랜드 스토리</h2><br>
+                    <p class="tagline">LTREE는 5년 전 창립된 스타트업으로,<br>'Lucky Tree(행운의 나무)'에서 이름을 얻었습니다.<br> 기술의 힘을 믿으며며 혁신적인 솔루션으로<br> 고객의 문제를 해결하고 비즈니스 성장을 돕는 것이 우리의 목표입니다.</p>
+                    <p class="tagline">'Learning Tree'라는 의미처럼 지속적인 학습과 성장을 추구합니다. <br>고객과 함께 성장하며, 그 과정에서 우리 자신도 발전합니다.<br> 기술의 미래를 선도하고, 고객과 함께 성공의 길을 걸어가겠습니다.</p>
                 </div>
             </div>
         </div>
@@ -141,17 +117,17 @@
         <div class="content-section service-section">
         <div class="container">
             <div class="service-block">
-                <div class="service-block-img"><img src="../images/placeholder-image.jpg" alt="통합물류 컨설팅 및 플랫폼 구축"></div>
+                <div class="service-block-img"><img src="../images/서비스1.png" alt="통합물류 컨설팅 및 플랫폼 구축"></div>
                 <h3>통합물류 컨설팅 및 플랫폼 구축</h3>
-                <p class="tagline">맞춤형 컨설팅과 데이터 기반 플랫폼으로 <br>물류 프로세스 최적화 및 비용 절감·운영 효율 향상</p>
+                <p class="tagline">맞춤형 컨설팅, 데이터 기반 플랫폼으로 <br>물류 프로세스 최적화 및 비용 절감·운영 효율 향상</p>
             </div>
             <div class="service-block">
-                <div class="service-block-img"><img src="../images/placeholder-image.jpg" alt="ITO 서비스"></div>
+                <div class="service-block-img"><img src="../images/서비스3.png" alt="ITO 서비스"></div>
                 <h3>ITO 서비스</h3>
-                <p class="tagline">IT 아웃소싱으로 운영 효율·비용 절감, <br>인프라 최적화와 유연한 인력 관리.1</p>
+                <p class="tagline">IT 아웃소싱으로 운영 효율·비용 절감, <br>인프라 최적화와 유연한 인력 관리</p>
             </div>
             <div class="service-block">
-                <div class="service-block-img"><img src="../images/placeholder-image.jpg" alt="서비스 개발 및 유통"></div>
+                <div class="service-block-img"><img src="../images/서비스2.png" alt="서비스 개발 및 유통"></div>
                 <h3>서비스 개발 및 유통</h3>
                 <p class="tagline">맞춤형 솔루션 개발·유통, 시장 변화에 빠르게 대응</p>
             </div>
@@ -192,18 +168,13 @@
                     </div>
                 </a>
                 <a href="https://thirautech.com/" target="_blank" rel="noopener" class="partner-card">
-                    <div class="partner-card-logo"><img src="../images/LS.png
-                        
-                          " alt="엘에스티라유텍"></div>
+                    <div class="partner-card-logo"><img src="../images/LS.png" alt="엘에스티라유텍"></div>
                     <div class="partner-card-body">
                         <h3>엘에스티라유텍</h3>
                         <p class="tagline">SCM·물류 솔루션 개발·공급·컨설팅</p>
                         <span class="partner-link">파트너사 바로가기 <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
-            </div>
-            <div class="partner-cta">
-                <a href="../support/support-contact.html" class="btn btn-primary">문의하기</a>
             </div>
         </div>
         </div>

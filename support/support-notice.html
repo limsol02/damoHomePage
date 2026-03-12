@@ -16,51 +16,138 @@
         .page-hero-content { position: relative; z-index: 2; text-align: center; color: var(--primary-white); }
         .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 600; letter-spacing: var(--letter-spacing-tight); margin-bottom: 16px; }
         .content-section { padding: var(--spacing-xl) 0; }
-        .notice-list { max-width: 900px; margin: 0 auto; }
-        .notice-item { display: flex; align-items: center; padding: var(--spacing-md) 0; border-bottom: 1px solid var(--neutral-gray); gap: var(--spacing-md); }
-        .notice-item:last-child { border-bottom: none; }
-        .notice-date { font-size: 17px; color: var(--text-soft); min-width: 100px; }
-        .notice-title { font-weight: 600; }
-        .notice-item a { color: inherit; }
-        .notice-item a:hover { color: var(--accent-orange); }
-        .no-notice { text-align: center; padding: var(--spacing-lg); color: var(--text-muted); }
-        @media (max-width: 768px) { .page-hero { height: 35vh; min-height: 280px; } .notice-item { flex-wrap: wrap; } }
+        .notice-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .notice-category { display: flex; align-items: center; gap: 8px; }
+        .notice-category label { color: var(--text-muted); font-size: 17px; }
+        .notice-category select { padding: 8px 12px; border: 1px solid var(--neutral-gray); border-radius: var(--radius-sm); font-size: 17px; background: var(--primary-white); }
+        .notice-search-type { display: flex; gap: 4px; }
+        .notice-search-type a { padding: 8px 14px; font-size: 17px; color: var(--text-muted); text-decoration: none; border-radius: var(--radius-sm); }
+        .notice-search-type a:hover, .notice-search-type a.active { background: var(--neutral-light); color: var(--accent-orange); }
+        .notice-list { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, auto); gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .notice-item { display: block; padding: 20px 24px; background: var(--primary-white); border: 1px solid var(--neutral-gray); border-radius: var(--radius-md); color: inherit; transition: border-color 0.2s; }
+        .notice-item:hover { border-color: var(--neutral-gray); }
+        .notice-item.hidden { display: none; }
+        .notice-item-title { font-weight: 600; font-size: 17px; margin-bottom: 10px; line-height: 1.5; }
+        .notice-item-more { display: inline-block; font-size: 17px; color: #2563eb; text-decoration: none; margin-bottom: 12px; font-weight: 500; }
+        .notice-item-more:hover { text-decoration: underline; color: #1d4ed8; }
+        .notice-item-thumb { display: block; width: 100%; height: 140px; object-fit: cover; border-radius: var(--radius-sm); background: var(--neutral-light); }
+        .notice-pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 32px; flex-wrap: wrap; }
+        .notice-pagination a, .notice-pagination span { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; padding: 0 12px; font-size: 17px; color: var(--text-muted); text-decoration: none; border: 1px solid var(--neutral-gray); border-radius: var(--radius-sm); background: var(--primary-white); }
+        .notice-pagination a:hover { background: var(--neutral-light); color: var(--accent-orange); border-color: var(--accent-orange); }
+        .notice-pagination .current { background: var(--accent-orange); color: var(--primary-white); border-color: var(--accent-orange); }
+        .notice-write-wrap { text-align: center; margin-top: 24px; }
+        .notice-write-wrap .btn { display: inline-flex; align-items: center; gap: 8px; }
+        @media (max-width: 768px) { .page-hero { height: 35vh; min-height: 280px; } .notice-list { grid-template-columns: 1fr; } .notice-item { padding: 16px; } .notice-toolbar { flex-direction: column; align-items: stretch; } }
     </style>
 </head>
 <body>
     <div id="nav-placeholder"></div>
+
     <section class="page-hero">
         <div class="page-hero-content">
-            <h1 class="page-hero-title">공지사항</h1>
-            <p>새소식과 공지를 안내합니다</p>
+            <h1 class="page-hero-title">Notice</h1>
+            <p>앨트리의 새로운 소식을 전합니다.</p>
         </div>
     </section>
+
     <section class="content-section">
         <div class="container">
             <div class="section-header section-header--tight" style="text-align: center;">
                 <h2 class="section-title">공지사항</h2>
                 <p class="section-tagline">서비스·운영 관련 공지입니다.</p>
             </div>
+
+
             <div class="notice-list">
-                <div class="notice-item">
-                    <span class="notice-date">2024.02.01</span>
-                    <a href="#" class="notice-title">2024년 상반기 정기 점검 안내</a>
+                <div class="notice-item" data-page="1">
+                    <div class="notice-item-title">2025년 상반기 정기 점검 및 서비스 업데이트 안내</div>
+                    <a href="support-notice-detail.html?id=11" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
                 </div>
-                <div class="notice-item">
-                    <span class="notice-date">2024.01.15</span>
-                    <a href="#" class="notice-title">스마트 물류 서비스 업데이트 안내</a>
+                <div class="notice-item" data-page="1">
+                    <div class="notice-item-title">스마트 물류·ITO 솔루션 신규 기능 출시</div>
+                    <a href="support-notice-detail.html?id=10" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
                 </div>
-                <div class="notice-item">
-                    <span class="notice-date">2024.01.02</span>
-                    <a href="#" class="notice-title">연말연시 고객센터 운영 안내</a>
+                <div class="notice-item" data-page="1">
+                    <div class="notice-item-title">연말연시 고객센터·기술지원 운영 안내</div>
+                    <a href="support-notice-detail.html?id=9" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
+                </div>
+                <div class="notice-item" data-page="1">
+                    <div class="notice-item-title">개인정보 처리방침 및 이용약관 개정 안내</div>
+                    <a href="support-notice-detail.html?id=8" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
+                </div>
+                <div class="notice-item" data-page="1">
+                    <div class="notice-item-title">팬골린 스위트(Pangolin Suite) 정식 버전 출시</div>
+                    <a href="support-notice-detail.html?id=7" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
+                </div>
+                <div class="notice-item" data-page="1">
+                    <div class="notice-item-title">제휴·파트너십 문의 안내</div>
+                    <a href="support-notice-detail.html?id=6" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
+                </div>
+                <div class="notice-item hidden" data-page="2">
+                    <div class="notice-item-title">작업의 페이지 및 모든 프로세스에 대해 궁금한 점, 질문 드립니다.</div>
+                    <a href="support-notice-detail.html?id=5" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
+                </div>
+                <div class="notice-item hidden" data-page="2">
+                    <div class="notice-item-title">끝내주는 일... 매우 멋진 직업이에요</div>
+                    <a href="support-notice-detail.html?id=4" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
+                </div>
+                <div class="notice-item hidden" data-page="2">
+                    <div class="notice-item-title">아름다운 디자인과 레이아웃...</div>
+                    <a href="support-notice-detail.html?id=3" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
+                </div>
+                <div class="notice-item hidden" data-page="2">
+                    <div class="notice-item-title">예술 같은 놀라운 작품. 너무 감동적이에요</div>
+                    <a href="support-notice-detail.html?id=2" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
+                </div>
+                <div class="notice-item hidden" data-page="2">
+                    <div class="notice-item-title">세련된 느낌이 너무 좋아요, 잘 봤습니다</div>
+                    <a href="support-notice-detail.html?id=1" class="notice-item-more">더 알아보기 &gt;</a>
+                    <img class="notice-item-thumb" src="../images/placeholder-image.jpg" alt="">
                 </div>
             </div>
-        </div>
+
+            <div class="notice-pagination" id="noticePagination">
+                <a href="#" class="page-link current" data-page="1">1</a>
+                <a href="#" class="page-link" data-page="2">2</a>
+            </div>
+
+       </div>
     </section>
     <div id="footer-placeholder"></div>
 
     <script src="../js/nav.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      (function () {
+        var items = document.querySelectorAll('.notice-item');
+        var links = document.querySelectorAll('.notice-pagination .page-link');
+        function showPage(page) {
+          var p = parseInt(page, 10);
+          items.forEach(function (el) {
+            el.classList.toggle('hidden', parseInt(el.getAttribute('data-page'), 10) !== p);
+          });
+          links.forEach(function (a) {
+            a.classList.toggle('current', parseInt(a.getAttribute('data-page'), 10) === p);
+          });
+        }
+        links.forEach(function (a) {
+          a.addEventListener('click', function (e) {
+            e.preventDefault();
+            showPage(a.getAttribute('data-page'));
+          });
+        });
+      })();
+    </script>
 </body>
 </html>

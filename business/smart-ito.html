@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .page-hero { position: relative; width: 100%; height: 50vh; min-height: 400px; background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-indigo) 100%); background-image: url('../images/smart-ito-hero.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
-        .page-hero .hero-overlay { position: absolute; inset: 0; background: rgba(26, 47, 74, 0.6); }
-        .page-hero-content { position: relative; z-index: 2; text-align: center; color: var(--primary-white); padding: 0 var(--spacing-md); }
-        .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 600; letter-spacing: var(--letter-spacing-tight); margin-bottom: 12px; text-shadow: 0 1px 8px rgba(0,0,0,0.25); }
-        .page-hero-sub { font-size: clamp(16px, 2vw, 20px); opacity: 0.95; }
         .content-section { padding: var(--spacing-xl) 0; scroll-margin-top: 85px; }
         .content-section .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .ito-intro { text-align: center; margin-bottom: var(--spacing-xl); }
@@ -36,11 +31,13 @@
         .ito-effect ul { list-style: none; padding: 0; margin: 0; }
         .ito-effect li { font-size: 17px; line-height: 1.7; color: var(--text-gray); padding: 6px 0 6px 20px; position: relative; }
         .ito-effect li::before { content: '·'; position: absolute; left: 0; color: var(--color-teal); font-weight: 600; }
-        .ito-overview-item-img { margin-bottom: var(--spacing-sm); border-radius: var(--radius-sm); overflow: hidden; }
-        .ito-overview-item-img img { width: 100%; height: auto; max-height: 140px; object-fit: cover; display: block; }
-        .ito-block-img { margin-bottom: var(--spacing-md); border-radius: var(--radius-md); overflow: hidden; max-width: 400px; }
-        .ito-block-img img { width: 100%; height: auto; max-height: 200px; object-fit: cover; display: block; }
-        @media (max-width: 768px) { .page-hero { height: 40vh; min-height: 300px; } }
+        .ito-overview-item-img { margin-top: var(--spacing-sm); border-radius: var(--radius-sm); overflow: hidden; width: 300px; height: 180px; margin-left: auto; margin-right: auto; }
+        .ito-overview-item-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+        .ito-block-img { margin-bottom: var(--spacing-md); border-radius: var(--radius-md); overflow: hidden; max-width: 600px; flex-shrink: 0; }
+        .ito-block-img img { width: 100%; height: auto; max-height: 400px; object-fit: cover; display: block; }
+        .ito-block--row { display: flex; flex-direction: column; gap: 24px; }
+        .ito-block--row .ito-block-text { order: 1; }
+        .ito-block--row .ito-block-img { order: 2; margin-bottom: 0; }
     </style>
 </head>
 <body>
@@ -50,66 +47,71 @@
         <div class="hero-overlay"></div>
         <div class="page-hero-content">
             <h1 class="page-hero-title">스마트 ITO</h1>
-            <p class="page-hero-sub">Smart ITO</p>
+            <h2 class="suite-title">Smart ITO</h2>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
             <div class="ito-intro">
-                <p>IT 운영·시스템통합 노하우와 AI/빅데이터/Smart Factory로 디지털 혁신을 선도합니다.</p>
+                <p>다양한 IT운영과 시스템통합 노하우로 고객사에 새로운 가치와 기회를 제공하며 인공지능/빅데이터/Smart Factory 등 디지털혁신 기술을 통하여 새로운 ICT서비스를 선도합니다.</p>
             </div>
             <div class="ito-overview">
                 <div class="ito-overview-item">
-                    <div class="ito-overview-item-img"><img src="../images/placeholder-image.jpg" alt="IT Outsourcing 컨설팅"></div>
                     <p class="num">01</p>
                     <h3>IT Outsourcing 컨설팅</h3>
                     <p>고객 특성에 맞는 최적화된 SI/운영 방안 제시</p>
+                    <div class="ito-overview-item-img"><img src="../images/itos1.png" alt="IT Outsourcing 컨설팅"></div>
                 </div>
                 <div class="ito-overview-item">
-                    <div class="ito-overview-item-img"><img src="../images/placeholder-image.jpg" alt="Application 구축/운영"></div>
                     <p class="num">02</p>
                     <h3>Application 구축/운영</h3>
-                    <p>엔터프라이즈급 구축·운영 서비스</p>
+                    <p>엔터프라이즈급 구축·운영 서비스</p><br>
+                    <div class="ito-overview-item-img"><img src="../images/itos2 (2).png" alt="Application 구축/운영"></div>
                 </div>
                 <div class="ito-overview-item">
-                    <div class="ito-overview-item-img"><img src="../images/placeholder-image.jpg" alt="IT 인프라 구축/운영"></div>
                     <p class="num">03</p>
                     <h3>IT 인프라 구축/운영</h3>
-                    <p>서버/네트워크 인프라 구축·운영</p>
+                    <p>서버/네트워크 인프라 구축·운영</p><br>
+                    <div class="ito-overview-item-img"><img src="../images/itos3.png" alt="IT 인프라 구축/운영"></div>
                 </div>
             </div>
-            <p class="ito-lead">기술 전문성과 고객 통찰로 혁신·비즈니스 성장을 지원하고, 안정적·효율적 서비스로 고객이 핵심 역량에 집중할 수 있게 합니다.</p>
+            <p class="ito-lead">기술 전문성과 다양한 고객 업종에 대한 통찰력을 바탕으로 고객 혁신과 지속적 비즈니스 성장을 지원합니다.</p>
+            <p class="ito-lead">축적된 IT 운영 노하우와 전문성, 고객 비즈니스 이해를 바탕으로 안정적·효율적인 서비스를 제공하여, 고객사가 핵심적인 역량에 집중할 수 있도록 고객 가치를 높입니다.</p>
         </div>
     </section>
 
     <section class="content-section" style="background: var(--neutral-light);">
         <div class="container">
-            <div class="ito-block">
-                <div class="ito-block-img"><img src="../images/placeholder-image.jpg" alt="01 IT Outsourcing 컨설팅"></div>
-                <h2>01 IT Outsourcing 컨설팅</h2>
-                <p>고객 맞춤 SI/운영 방안 제시, 효율적·안정적 IT 운영 컨설팅.</p>
-                <div class="ito-effect">
-                    <h4>기대효과</h4>
-                    <ul>
-                        <li>구축/운영 노하우 제공</li>
-                        <li>환경진단·시스템 통합 컨설팅</li>
-                        <li>시스템 최적화 컨설팅</li>
-                    </ul>
+            <div class="ito-block ito-block--row">
+                <div class="ito-block-text">
+                    <h2>01 IT Outsourcing 컨설팅</h2>
+                    <p>축적된 IT운영 노하우를 통하여, 고객 특성에 맞는 최적화된 Application / IT Infra Service에 대한 시스템통합 / 운영 방안을 제시하며, 효율적이고 안정적인 IT운영 방법을 제안하는 컨설팅 서비스를 제공합니다.</p>
+                    <div class="ito-effect">
+                        <h4>기대효과</h4>
+                        <ul>
+                            <li>01 구축/운영에 대한 다양한 노하우 제공</li>
+                            <li>02 안정적인 운영을 위한 환경진단 컨설팅</li>
+                            <li>03 진단을 통한 서비스 및 시스템 통합 컨설팅</li>
+                            <li>04 효율적 아웃소싱을 위한 시스템 최적화 컨설팅</li>
+                        </ul>
+                    </div>
                 </div>
+                <div class="ito-block-img"><img src="../images/ito1.webp" alt="01 IT Outsourcing 컨설팅"></div>
             </div>
-            <div class="ito-block">
-                <div class="ito-block-img"><img src="../images/placeholder-image.jpg" alt="02 Application 구축/운영"></div>
-                <h2>02 Application 구축/운영</h2>
-                <p>엔터프라이즈급 운영 경험·기술력으로 차별화된 구축/운영 서비스.</p>
+            <div class="ito-block ito-block--row">
+                <div class="ito-block-text">
+                    <h2>02 Application 구축/운영</h2>
+                    <p>SK하이닉스, 한전KDN 등 제조/금융/공공 등 엔터프라이즈급 기업들을 대상으로 한 운영경험을 토대로 축적된 경험과 기술력, 전문인력을 바탕으로 고객 비즈니스 전반에 걸친 새로운 가치와 차별화된 구축/운영 서비스를 제공합니다.</p>
+                </div>
+                <div class="ito-block-img"><img src="../images/ito2.png" alt="02 Application 구축/운영"></div>
             </div>
-            <div class="ito-block">
-                <div class="ito-block-img"><img src="../images/placeholder-image.jpg" alt="03 IT Infra 구축/운영"></div>
-                <h2>03 IT Infra 구축/운영</h2>
-                <p>가상화·Cloud 등 서버/네트워크 인프라 구축·안정적 운영.</p>
-            </div>
-            <div style="text-align: center; margin-top: var(--spacing-lg);">
-                <a href="../support/support-contact.html" class="btn btn-primary">문의하기</a>
+            <div class="ito-block ito-block--row">
+                <div class="ito-block-text">
+                    <h2>03 IT 인프라 구축/운영</h2>
+                    <p>가상화 / Cloud 등 다양한 환경의 서버/네트워크 인프라 구축 노하우를 제공, 고객사 비즈니스 수행을 위한 최적의 IT환경을 구축하여 안정적인 IT Infra 운영 서비스를 제공합니다.</p>
+                </div>
+                <div class="ito-block-img"><img src="../images/ito3 (2).png" alt="03 IT Infra 구축/운영"></div>
             </div>
         </div>
     </section>

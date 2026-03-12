@@ -231,7 +231,8 @@ h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title
 }
 
 .navbar.scrolled {
-    background-color: rgba(45, 40, 66, 0.92);
+    background-color:black;
+    /* background-color: rgba(45, 40, 66, 0.92); */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
@@ -355,7 +356,7 @@ h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title
     left: 0;
     min-width: 180px;
     padding: 8px 0;
-    background: rgba(45, 40, 66, 0.98);
+    background:  black;
     border-radius: var(--radius-sm);
     box-shadow: 0 8px 24px rgba(45, 40, 66, 0.4);
     border: 1px solid rgba(91, 79, 139, 0.25);
@@ -958,10 +959,11 @@ h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title
     font-weight: 600;
     letter-spacing: var(--letter-spacing-tight);
     margin-bottom: 6px;
+    color: #ffffff;
 }
 .solution-desc {
     font-size: 17px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.5;
     margin-bottom: var(--spacing-sm);
     flex-grow: 1;
@@ -969,13 +971,13 @@ h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title
 .solution-cta {
     font-size: 17px;
     font-weight: 600;
-    color: var(--color-teal-light);
+    color: #a8e6cf;
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
 .solution-card:hover .solution-cta {
-    color: var(--primary-white);
+    color: #ffffff;
 }
 
 /* CTA 3열: Partnership · Recruit · 도입 상담 */
@@ -1770,7 +1772,8 @@ h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title
    Footer
    ================================ */
 .footer {
-    background-color: var(--footer-dark);
+    /* background-color: var(--footer-dark); */
+    background-color:black;
     color: rgba(255, 255, 255, 0.8);
     padding: var(--spacing-md) 0 var(--spacing-md);
 }
@@ -2253,7 +2256,7 @@ h1, h2, h3, h4, h5, h6, strong, b, .section-title, .hero-title, .page-hero-title
 }
 
 .content-section {
-    padding: var(--spacing-xl) 0;
+    /* padding: var(--spacing-xl) 0; */
 }
 
 .suite-section {

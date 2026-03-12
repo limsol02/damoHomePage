@@ -368,51 +368,9 @@ if (detailBtn) {
 }
 if (detailBtn1) {
     detailBtn1.addEventListener('click', () => {
-        window.location.href = 'about/about-altri.html';
+        window.location.href = 'about/about-ltree.html';
     });
 }
-
-// ================================
-// Contact Form Handling
-// ================================
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value
-    };
-    
-    // Simulate form submission
-    console.log('Form Data:', formData);
-    
-    // Show success message
-    alert(`Thank you, ${formData.name}! Your message has been received.\n\nWe'll get back to you within 24 hours at ${formData.email}.`);
-    
-    // Reset form
-    contactForm.reset();
-    
-    // In production, you would send this data to a backend service:
-    // fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(formData)
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     alert('Message sent successfully!');
-    //     contactForm.reset();
-    // })
-    // .catch(error => {
-    //     alert('Error sending message. Please try again.');
-    // });
-});
 
 // ================================
 // Parallax Effect for Hero Section

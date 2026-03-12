@@ -12,15 +12,15 @@
 
     var fallbackHtml = '<nav class="navbar" id="navbar">' +
         '<div class="nav-container">' +
-        '<a href="index.html" class="nav-logo"><img src="images/logo-ltree.png" alt="LTREE" style="height: 50px; width: auto;"></a>' +
+        '<a href="index.html" class="nav-logo"><img src="images/whitelogo.PNG" alt="LTREE" style="height: 50px; width: auto;"></a>' +
         '<div class="nav-menu" id="navMenu">' +
         '<div class="nav-item nav-item--dropdown">' +
         '<a href="business/smart-logistics.html" class="nav-link">비지니스 <i class="fas fa-chevron-down nav-arrow"></i></a>' +
         '<ul class="nav-dropdown"><li><a href="business/smart-logistics.html" class="nav-sublink">스마트 물류</a></li><li><a href="business/smart-ito.html" class="nav-sublink">스마트 ITO</a></li></ul>' +
         '</div>' +
         '<div class="nav-item nav-item--dropdown">' +
-        '<a href="about/about-altri.html" class="nav-link">회사소개 <i class="fas fa-chevron-down nav-arrow"></i></a>' +
-        '<ul class="nav-dropdown"><li><a href="about/about-altri.html#altri" class="nav-sublink">앨트리</a></li><li><a href="about/about-altri.html#service" class="nav-sublink">서비스</a></li><li><a href="about/about-altri.html#partner" class="nav-sublink">파트너</a></li><li><a href="about/about-altri.html#location" class="nav-sublink">오시는 길</a></li></ul>' +
+        '<a href="about/about-ltree.html" class="nav-link">회사소개 <i class="fas fa-chevron-down nav-arrow"></i></a>' +
+        '<ul class="nav-dropdown"><li><a href="about/about-ltree.html#ltree" class="nav-sublink">LTREE</a></li><li><a href="about/about-ltree.html#service" class="nav-sublink">서비스</a></li><li><a href="about/about-ltree.html#partner" class="nav-sublink">파트너</a></li><li><a href="about/about-ltree.html#location" class="nav-sublink">오시는 길</a></li></ul>' +
         '</div>' +
         '<a href="recruitment/recruitment.html" class="nav-link">인재채용</a>' +
         '<div class="nav-item nav-item--dropdown">' +
@@ -57,7 +57,7 @@
             }
         });
         nav.querySelectorAll('a.nav-sublink').forEach(function(a) {
-            if (current.indexOf('about-') === 0) return;
+            if (current === 'about-ltree.html') return;
             var h = (a.getAttribute('href') || '').replace(/^#/, '');
             var linkPage = h.replace(/^.*[\/\\]/, '').split('#')[0];
             var linkHash = (h.split('#')[1] || '').toLowerCase();
@@ -72,8 +72,8 @@
                 }
             }
         });
-        if (current.indexOf('about-') === 0) {
-            var aboutLink = nav.querySelector('a.nav-link[href*="about-altri"]');
+        if (current === 'about-ltree.html') {
+            var aboutLink = nav.querySelector('a.nav-link[href*="about-ltree"]');
             if (aboutLink) aboutLink.classList.add('active');
         }
     }

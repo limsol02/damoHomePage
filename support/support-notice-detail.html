@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="공지사항 상세 - 고객지원">
+    <title>공지사항 상세 | 고객지원</title>
+    <link rel="icon" type="image/png" href="../images/loga.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-hero { position: relative; width: 100%; height: 45vh; min-height: 360px; background: linear-gradient(135deg, var(--bg-dark) 0%, var(--color-navy) 100%); display: flex; align-items: center; justify-content: center; }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; color: var(--primary-white); }
+        .page-hero-title { font-family: var(--font-primary); font-size: clamp(32px, 5vw, 48px); font-weight: 600; letter-spacing: var(--letter-spacing-tight); margin-bottom: 16px; }
+        .content-section { padding: var(--spacing-xl) 0; }
+        .notice-detail { max-width: 800px; margin: 0 auto; }
+        .notice-detail-header { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--neutral-gray); }
+        .notice-detail-title { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 28px); font-weight: 600; margin-bottom: 16px; line-height: 1.4; color: var(--text-dark); }
+        .notice-detail-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; font-size: 17px; color: var(--text-muted); }
+        .notice-detail-meta span { display: inline-flex; align-items: center; gap: 6px; }
+        .notice-detail-body { font-size: 17px; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px; }
+        .notice-detail-thumb { display: block; width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-md); background: var(--neutral-light); margin-bottom: 24px; }
+        .notice-detail-back { margin-top: 32px; }
+        .notice-detail-back .btn { display: inline-flex; align-items: center; gap: 8px; }
+        .notice-detail-empty { text-align: center; padding: 48px 24px; color: var(--text-muted); font-size: 17px; }
+        @media (max-width: 768px) { .page-hero { height: 35vh; min-height: 280px; } }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Notice</h1>
+            <p>공지사항 상세</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="notice-detail" id="noticeDetail">
+                <div class="notice-detail-empty" id="noticeEmpty">해당 공지를 찾을 수 없습니다.</div>
+                <div class="notice-detail-content" id="noticeContent" style="display: none;">
+                    <div class="notice-detail-header">
+                        <h2 class="notice-detail-title" id="detailTitle"></h2>
+                        <div class="notice-detail-meta" id="detailMeta"></div>
+                    </div>
+                    <div class="notice-detail-body" id="detailBody"></div>
+                    <img class="notice-detail-thumb" id="detailThumb" src="../images/placeholder-image.jpg" alt="">
+                    <div class="notice-detail-back">
+                        <a href="support-notice.html" class="btn btn-primary"><i class="fas fa-list"></i> 목록으로</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      (function () {
+        var notices = {
+          11: { title: '2025년 상반기 정기 점검 및 서비스 업데이트 안내', author: '관리자', date: '2025.03.01', views: 324, body: '서비스 안정화를 위한 정기 점검이 예정되어 있습니다. 이용에 참고 부탁드립니다.\n\n점검 일정 및 세부 내용은 추후 공지하겠습니다. 불편을 드려 죄송합니다.' },
+          10: { title: '스마트 물류·ITO 솔루션 신규 기능 출시', author: '기술지원팀', date: '2025.02.28', views: 512, body: '실시간 재고 연동, 예측 수요 분석 등 새 기능이 추가되었습니다.\n\n자세한 사용 방법은 매뉴얼 및 기술지원을 통해 안내드리겠습니다.' },
+          9: { title: '연말연시 고객센터·기술지원 운영 안내', author: '관리자', date: '2024.12.20', views: 891, body: '12월 24일·31일 운영 시간이 조정됩니다. 긴급 문의는 메일로 부탁드립니다.\n\n정상 운영은 1월 2일부터 이어갑니다.' },
+          8: { title: '개인정보 처리방침 및 이용약관 개정 안내', author: '관리자', date: '2024.11.15', views: 456, body: '2024년 12월 1일부터 개정된 약관이 적용됩니다. 내용 확인 부탁드립니다.\n\n관련 문의는 고객센터로 연락 주시기 바랍니다.' },
+          7: { title: '팬골린 스위트(Pangolin Suite) 정식 버전 출시', author: '기술지원팀', date: '2024.10.01', views: 623, body: '통합 대시보드 및 리포트 기능이 포함된 정식 버전을 공개합니다.\n\n기존 베타 사용자분들께는 별도 업그레이드 안내를 드리겠습니다.' },
+          6: { title: '제휴·파트너십 문의 안내', author: '관리자', date: '2024.09.10', views: 287, body: '비즈니스 제휴 및 기술 파트너십 문의는 문의하기를 이용해 주세요.\n\n담당자가 검토 후 연락드리겠습니다.' },
+          5: { title: '작업의 페이지 및 모든 프로세스에 대해 궁금한 점, 질문 드립니다.', author: '잭 다니엘', date: '방금 전', views: 1486, body: '항상 배우는 마음으로 보고 있습니다. 이번 프로젝트도 꼭 따라해보고 싶어요.' },
+          4: { title: '끝내주는 일... 매우 멋진 직업이에요', author: '데이비드 제임스', date: '방금 전', views: 1486, body: '항상 배우는 마음으로 보고 있습니다. 이번 프로젝트도 꼭 따라해보고 싶어요.' },
+          3: { title: '아름다운 디자인과 레이아웃...', author: '에밀리 스톤', date: '방금 전', views: 1486, body: '항상 배우는 마음으로 보고 있습니다. 이번 프로젝트도 꼭 따라해보고 싶어요.' },
+          2: { title: '예술 같은 놀라운 작품. 너무 감동적이에요', author: '올리버 워렌', date: '방금 전', views: 1486, body: '항상 배우는 마음으로 보고 있습니다. 이번 프로젝트도 꼭 따라해보고 싶어요.' },
+          1: { title: '세련된 느낌이 너무 좋아요, 잘 봤습니다', author: '제트 블랙', date: '방금 전', views: 1486, body: '항상 배우는 마음으로 보고 있습니다. 이번 프로젝트도 꼭 따라해보고 싶어요.' }
+        };
+        var params = new URLSearchParams(window.location.search);
+        var id = parseInt(params.get('id'), 10);
+        var notice = id && notices[id];
+        var emptyEl = document.getElementById('noticeEmpty');
+        var contentEl = document.getElementById('noticeContent');
+        if (notice) {
+          emptyEl.style.display = 'none';
+          contentEl.style.display = 'block';
+          document.getElementById('detailTitle').textContent = notice.title;
+          document.getElementById('detailMeta').innerHTML = '<span>' + notice.author + '</span><span><i class="far fa-clock"></i> ' + notice.date + '</span><span><i class="far fa-eye"></i> ' + notice.views + '</span>';
+          document.getElementById('detailBody').innerHTML = notice.body.split(/\n\n+/).map(function (p) { return '<p>' + p.replace(/\n/g, '<br>') + '</p>'; }).join('');
+          document.title = notice.title + ' | 공지사항 | 고객지원';
+        }
+      })();
+    </script>
+</body>
+</html>
